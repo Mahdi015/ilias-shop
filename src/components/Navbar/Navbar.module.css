@@ -1,0 +1,57 @@
+@import url("http://fonts.cdnfonts.com/css/brandon-grotesque-regular");
+.navbar {
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbarcontent {
+  padding: 20px 14rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.search {
+  margin-right: 4rem;
+  flex: 0.4;
+}
+
+.navbarlink {
+  flex: 1.1;
+}
+.navbarlink a {
+  text-decoration: none;
+  cursor: pointer;
+  color: rgba(50, 40, 40, 0.863);
+  transition: color 0.4s ease 0s;
+  padding: 0 23px;
+  font-family: "Brandon Grotesque Light", sans-serif;
+  font-size: 17px;
+  font-weight: lighter;
+}
+.navbarlink a:hover {
+  color: #d2461c;
+}
+.navbarbuttons {
+  flex: 0.4;
+}
+.navbarbuttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbarbuttons a {
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+  color: rgba(50, 40, 40, 0.863);
+  font-size: 17px;
+  font-weight: lighter;
+  transition: color 0.4s ease 0s;
+  cursor: pointer;
+  font-family: "Brandon Grotesque Light", sans-serif;
+  padding: 0 23px;
+}

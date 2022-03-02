@@ -1,0 +1,12 @@
+@import url("http://fonts.cdnfonts.com/css/brandon-grotesque-regular?styles=16713");
+.announcement {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Brandon Grotesque Black", sans-serif;
+  background-color: teal;
+}
