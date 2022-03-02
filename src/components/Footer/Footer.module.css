@@ -69,6 +69,7 @@
 } */
 
 /* ////////////////////////////// */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap");
 @import url("http://fonts.cdnfonts.com/css/brandon-grotesque-regular?styles=16711,16712");
 .container {
   display: flex;
@@ -118,5 +119,6 @@
 }
 .copyright h4 {
   margin-top: 4rem;
-  font-family: "Brandon Grotesque Thin", sans-serif;
+  /* font-family: "Brandon Grotesque Thin", sans-serif; */
+  font-family: "Poppins", sans-serif;
 }
