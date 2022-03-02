@@ -1,4 +1,4 @@
-@import url("http://fonts.cdnfonts.com/css/brandon-grotesque-regular?styles=16713");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 
 .sidebar {
   position: fixed;
@@ -46,10 +46,11 @@
   background-color: #b93079;
 }
 .sidebar ul li a span {
-  font-family: "Brandon Grotesque Medium", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   position: absolute;
   right: 0;
-  padding-right: 50px;
+  padding-right: 30px;
   line-height: 50px;
   display: none;
 }

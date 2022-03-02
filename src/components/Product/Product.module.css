@@ -1,4 +1,4 @@
-@import url("http://fonts.cdnfonts.com/css/brandon-grotesque-regular?styles=16711");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .container {
   flex: 1;
   margin: 5px;
@@ -61,14 +61,15 @@
   height: 38px;
   background-color: rgb(255, 255, 255);
   border-width: 1px;
-  color: rgb(40, 40, 40);
+  color: rgba(40, 40, 40, 0.781);
   font-size: 14px;
-  font-family: "Brandon Grotesque Light", sans-serif;
+  font-family: "Roboto", sans-serif;
   cursor: pointer;
   transition: all 1s ease;
+  font-weight: 500;
 }
 .container button:hover {
-  color: rgba(40, 40, 40, 0.6);
+  color: rgba(40, 40, 40, 0.486);
 }
 .price {
   z-index: 1;

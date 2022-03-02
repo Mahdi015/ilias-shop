@@ -1,4 +1,4 @@
-@import url("http://fonts.cdnfonts.com/css/brandon-grotesque-regular?styles=16713");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,100&display=swap");
 .container {
   display: flex;
   width: 100%;
@@ -58,20 +58,22 @@
   padding: 50px;
 }
 .infoContainer h1 {
-  font-family: "Brandon Grotesque Bold", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
 
   font-size: 70px;
 }
 .infoContainer p {
   margin: 30px 0;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
+  font-style: italic;
   letter-spacing: 3px;
-  font-family: "Brandon Grotesque Light", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .infoContainer button {
   padding: 10px;
-  font-family: "Brandon Grotesque Medium", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   cursor: pointer;
   color: white;

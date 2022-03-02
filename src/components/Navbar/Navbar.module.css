@@ -1,4 +1,4 @@
-@import url("http://fonts.cdnfonts.com/css/brandon-grotesque-regular");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
 .navbar {
   width: 100%;
   z-index: 999;
@@ -25,11 +25,11 @@
 .navbarlink a {
   text-decoration: none;
   cursor: pointer;
-  color: rgba(50, 40, 40, 0.863);
+  color: rgba(50, 40, 40, 0.685);
   transition: color 0.4s ease 0s;
   padding: 0 23px;
-  font-family: "Brandon Grotesque Light", sans-serif;
-  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
   font-weight: lighter;
 }
 .navbarlink a:hover {
@@ -47,11 +47,11 @@
   align-items: center;
   display: flex;
   text-decoration: none;
-  color: rgba(50, 40, 40, 0.863);
-  font-size: 17px;
+  color: rgba(50, 40, 40, 0.685);
+  font-size: 15px;
   font-weight: lighter;
   transition: color 0.4s ease 0s;
   cursor: pointer;
-  font-family: "Brandon Grotesque Light", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 0 23px;
 }

@@ -69,8 +69,7 @@
 } */
 
 /* ////////////////////////////// */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap");
-@import url("http://fonts.cdnfonts.com/css/brandon-grotesque-regular?styles=16711,16712");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap");
 .container {
   display: flex;
   flex-direction: column;
@@ -85,7 +84,7 @@
 }
 .logo {
   margin: 2rem 0;
-  font-family: "Brandon Grotesque Light", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .logo a {
   text-decoration: none;
@@ -99,8 +98,9 @@
 .info ul {
   list-style: none;
   font-size: 18px;
-  font-family: "Brandon Grotesque Thin", sans-serif;
-  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,6 +109,7 @@
 }
 .info ul li {
   cursor: pointer;
+  margin-bottom: 0.1rem;
 }
 .centerinfo {
   font-size: 16px;
@@ -119,6 +120,6 @@
 }
 .copyright h4 {
   margin-top: 4rem;
-  /* font-family: "Brandon Grotesque Thin", sans-serif; */
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
