@@ -4,7 +4,9 @@ import { BsSearch } from "react-icons/bs";
 import { AiFillHeart } from "react-icons/ai";
 import img from "../../images/product.png";
 import style from "./Product.module.css";
+import { useNavigate } from "react-router-dom";
 const Product = () => {
+  const navigate = useNavigate();
   return (
     <div className={style.container}>
       <div className={style.circle}></div>
@@ -14,7 +16,7 @@ const Product = () => {
           <FaShoppingCart />
         </div>
         <div className={style.icon}>
-          <BsSearch />
+          <BsSearch onClick={() => navigate("./product")} />
         </div>
         <div className={style.icon}>
           {" "}

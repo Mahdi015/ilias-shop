@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  margin: 40px;
+}
+
+.filterpanel {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+}
+.productscotainer {
+  flex: 4;
+  margin-left: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.filteritem {
+  margin: 1.5rem 0 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  transition: all 200ms ease-in-out;
+}
+.filteritem span {
+  font-size: 17px;
+  font-weight: 400;
+}
+.filteroption {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  transform: scaleY(0);
+  position: absolute;
+  visibility: hidden;
+  /* -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms; */
+  transition: all 0.2s ease-in-out;
+  transform-origin: top;
+}
+.filterpanel li,
+.filterpanel h2,
+.filterpanel span {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+}
+.filteroption ul {
+  list-style: none;
+}
+.filteroption ul li {
+  cursor: pointer;
+  font-weight: 300;
+  color: rgb(41, 41, 41);
+}
+.filteroption ul li:hover {
+  color: rgba(41, 41, 41, 0.664);
+}
+.colors {
+  display: flex;
+}
+.coloroption {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.coloroption:hover {
+  opacity: 0.7;
+}

@@ -49,6 +49,14 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <div className={style.newslettercontainer}>
+          <h1>Newsletter</h1>
+          <h4>Get timely updates from your favourite products</h4>
+          <div className={style.newsletterui}>
+            <input type="text" placeholder="Enter Your Email" />
+            <button>Subscribe Now</button>
+          </div>
+        </div>
         <div className={style.copyright}>
           <h4>Copyright © 2022 Ilias Shop </h4>
         </div>
