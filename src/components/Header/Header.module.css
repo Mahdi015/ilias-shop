@@ -1,12 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 .headercontainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .logocontainer {
+  display: flex;
+  justify-content: center;
   width: 200px;
 }
 .srachcontainer {
@@ -30,9 +32,9 @@
   color: #c96;
 }
 .logocontainer img {
-  height: 100px;
-  width: 100%;
-  background-size: cover;
+  height: auto;
+  max-width: 100%;
+  width: 82px;
 }
 .headercontainer a {
   text-decoration: none;
@@ -40,7 +42,7 @@
 }
 .srachcontainer input {
   outline: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 400;
   color: #222;
   padding: 10px 15px;

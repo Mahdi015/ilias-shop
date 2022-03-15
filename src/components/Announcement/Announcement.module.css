@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 .announcement {
   height: 35px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
+  justify-content: space-around;
+  color: rgba(34, 34, 34, 0.575);
   font-size: 12px;
-  font-weight: 900;
-  font-family: "Roboto", sans-serif;
-  background-color: teal;
+  font-weight: 400;
+  border-bottom: solid 0.5px rgba(128, 128, 128, 0.493);
+  /* background-color: teal; */
 }

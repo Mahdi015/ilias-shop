@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.css";
-import img from "./logo2.png";
+import img from "./logo.png";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -31,7 +31,15 @@ const Header = () => {
             }}
           >
             <AiOutlineHeart size={"1.4em"} />
-            <span style={{ marginLeft: "0.5rem" }}>My Wishlist</span>
+            <span
+              style={{
+                marginLeft: "0.5rem",
+                fontSize: "13px",
+                lineHeight: "13px",
+              }}
+            >
+              My Wishlist
+            </span>
           </div>
         </a>
         <a href="#">
