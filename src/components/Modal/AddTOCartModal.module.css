@@ -1,0 +1,161 @@
+.addtocartheader {
+  background-color: #f4f4f4;
+  padding: 1.2rem 1rem 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.addtocartcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.imggcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  height: 250px;
+}
+.imggcontainer img {
+  max-width: 330px;
+  height: 280px;
+}
+.pricecontainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 2rem 1rem 0 1rem;
+}
+.colorcontainer {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.colors {
+  display: flex;
+  flex: 0.9;
+}
+.color {
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.35s ease-out;
+}
+.color:hover {
+  border: 2px solid #c96;
+}
+.color img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.filtersize {
+  min-width: 160px;
+  font-weight: 400;
+  padding: 8.5px 30px 8.5px 10px;
+  background-color: transparent;
+  border-color: #d7d7d7;
+  outline: none;
+  color: #666;
+}
+.sizecontainer {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.sizecontainerbox {
+  display: flex;
+  flex: 0.9;
+  margin-left: 1rem;
+}
+
+.amountcontainer {
+  margin-top: 1.5rem;
+  padding-right: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+.amountbox {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100px;
+  flex: 0.9;
+}
+.quantityprepend {
+  position: absolute;
+  left: 0;
+}
+.quantityprepend,
+.quantityappend {
+  position: absolute;
+  top: 0;
+}
+
+.amountbox input {
+  padding: 8.5px 26px;
+  height: auto;
+  border-color: #dadada;
+  background-color: #fff;
+  margin: 0;
+  width: 100px;
+  outline: none;
+  border: 1.8px solid #ebebeb;
+  text-align: center;
+  color: #999;
+}
+.quantityappend {
+  position: absolute;
+  right: 0;
+}
+.amountbox button {
+  min-width: 0;
+  padding: 0.7rem 0.2rem;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.amountbox input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.iconspan {
+  transition: color 0.3s ease;
+  color: #999;
+}
+.iconspan:hover {
+  color: rgb(61, 61, 61);
+}
+
+.addtocartbutton {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+}
+.addtocartbutton button {
+  padding: 15px;
+  border: 2px solid #c96;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 10px;
+  color: #c96;
+  transition: all 0.35s ease;
+  letter-spacing: 0.6px;
+  width: 100%;
+}
+
+.addtocartbutton button:hover {
+  background-color: #c96;
+  color: white;
+}

@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import img from "./logo.png";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import Badge from "@mui/material/Badge";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const [cartLength, setcartLength] = useState(0);
+  const [cartTotal, setcartTotal] = useState(0);
+  const { cart } = useSelector((state) => ({ ...state }));
+  useEffect(() => {
+    let total = 0;
+    setcartLength(cart.length);
+    cart.map((c) => {
+      total += c.price * c.count;
+    });
+    setcartTotal(total);
+  }, [cart]);
+  if (window.location.href.includes("admin")) {
+    return null;
+  }
+
   return (
     <div className={styles.headercontainer}>
       <div className={styles.srachcontainer}>
@@ -31,6 +48,7 @@ const Header = () => {
             }}
           >
             <AiOutlineHeart size={"1.4em"} />
+
             <span
               style={{
                 marginLeft: "0.5rem",
@@ -42,13 +60,25 @@ const Header = () => {
             </span>
           </div>
         </a>
-        <a href="#">
-          <div style={{ alignItems: "center", display: "flex" }}>
-            {" "}
-            <AiOutlineShoppingCart size={"1.4em"} />{" "}
-            <span style={{ marginLeft: "0.5rem" }}>$0.00</span>
-          </div>
-        </a>
+
+        <Badge
+          badgeContent={cartLength ? cartLength : "0"}
+          color="warning"
+          sx={{
+            "& .MuiBadge-badge": { fontSize: 11, height: 18 },
+            p: 0.6,
+          }}
+        >
+          <a href="/cart">
+            <div style={{ alignItems: "center", display: "flex" }}>
+              {" "}
+              <AiOutlineShoppingCart size={"1.4em"} />{" "}
+              <span style={{ marginLeft: "0.5rem" }}>
+                {cartTotal ? `${cartTotal} TND` : "0.00 TND"}
+              </span>
+            </div>
+          </a>
+        </Badge>
       </div>
     </div>
   );

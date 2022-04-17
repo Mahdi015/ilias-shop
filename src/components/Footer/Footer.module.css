@@ -75,6 +75,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #222222;
+  margin-top: 2rem;
 }
 .info {
   display: flex;
@@ -89,7 +91,7 @@
   text-decoration: none;
 }
 .logo h1 {
-  color: black;
+  color: #fff;
 
   font-size: 30px;
   letter-spacing: 4px;
@@ -97,13 +99,12 @@
 .info ul {
   list-style: none;
   font-size: 18px;
-  font-weight: 300;
-  font-style: italic;
+  font-weight: 400;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgba(0, 0, 0, 0.712);
+  color: #777777;
 }
 .info ul li {
   cursor: pointer;
@@ -114,11 +115,12 @@
 }
 .centerinfo a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 .copyright h4 {
   margin-top: 4rem;
   font-weight: 400;
+  color: #777;
 }
 .newslettercontainer {
   width: 100%;
@@ -130,7 +132,7 @@
 }
 .newslettercontainer h1 {
   font-size: 24px;
-  color: #494949f3;
+  color: #fff;
   font-weight: 500;
   letter-spacing: 0.8px;
   margin-bottom: 0.3rem;
@@ -139,7 +141,7 @@
   font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.8px;
-  color: #494949f3;
+  color: #777;
   margin-bottom: 1rem;
 }
 .newsletterui {
@@ -155,7 +157,7 @@
 }
 .newsletterui button {
   padding: 12px;
-  background-color: #282828;
+  background-color: #4b4b4b;
   color: white;
   font-weight: 600;
   width: max-content;
@@ -167,4 +169,14 @@
 }
 .newsletterui button:hover {
   background-color: #d2461c;
+}
+.hr {
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  bottom: -20px;
+  left: 10px;
+  right: 10px;
+  background-color: #444;
 }

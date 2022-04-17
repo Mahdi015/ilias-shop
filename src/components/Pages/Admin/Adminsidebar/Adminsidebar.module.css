@@ -1,0 +1,112 @@
+.adminsidebar{
+    width: 240px;
+    z-index: 1001;
+    background: #252b3b;
+    bottom: 0;
+    margin-top: 0;
+    position: fixed;
+    top: 70px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    overflow: auto;
+
+}
+.sidebarcontainer{
+    padding: 10px 0 30px;
+    position: relative;
+    height: 100%;
+}
+.btn{
+    position: absolute;
+    bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.btn button{
+    width: 80%;
+    border-radius: 7px;
+
+    padding: 10px;
+    border: 2px solid #3c7ec0;
+    background-color: #3c7ec0;
+    cursor: pointer;
+    font-weight: 500;
+    line-height: 18px;
+    color: rgb(212, 212, 212);
+    transition: all 0.35s ease-in-out;
+    letter-spacing: 0.6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    font-size: 16px;
+}
+.btn button:hover{
+    border: 2px solid #3c7ec0c2;
+    background-color: #3c7ec0c2;
+}
+.sidebarcontainer ul{
+    list-style: none;
+    
+}
+.sidebarcontainer ul li {
+    display: block;
+    width: 100%;
+    position: relative;
+
+}
+.menutitle {
+    color: #8590a5;
+    padding: 14px 20px;
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Inter",sans-serif;
+    opacity: .5;
+}
+.menuitem a{
+    
+    padding: 1rem 1.1rem;
+    color: #74788d;
+    position: relative;
+    font-size: 14.2px;
+    transition: all .4s;
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.menuitem a:hover{
+    color: #d7e4ec;
+}
+.menuitemdropdown a{
+    display: block;
+    padding: 0.4rem 1.5rem 0.4rem 2.9rem;
+    font-size: 13px;
+    color: #74788d;
+    position: relative;
+    transition: all .4s;
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+
+}
+.dropdownul{
+    position: absolute;
+    opacity: 0;
+    transform: scaleY(0);
+    visibility: hidden;
+    /* transition: all 0.2s ease-in-out; */
+    transition: all .3s;
+    transform-origin: top;
+}
+#active{
+    color: #d7e4ec;
+
+}

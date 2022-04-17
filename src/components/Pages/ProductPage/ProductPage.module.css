@@ -4,10 +4,12 @@
 }
 .imgcontainer {
   flex: 1;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 .imgcontainer img {
-  width: 100%;
-  height: 90vh;
+  width: 50%;
   object-fit: cover;
 }
 .infocontainer {
@@ -17,27 +19,34 @@
 .infocontainer p {
   margin: 20px 0;
   letter-spacing: 0.5px;
+  color: #777;
+  font-size: 1rem;
+  font-weight: 300;
 }
 .infocontainer h1 {
   font-weight: 400;
 }
-.infocontainer span {
+/* .infocontainer span {
   font-weight: 100;
   font-size: 40px;
-}
+} */
 .filtercontainer {
   display: flex;
   justify-content: space-between;
   width: 50%;
-  margin: 30px 0;
+  margin-top: 30px;
+  flex-direction: column;
 }
 .filtercontainer h1 {
-  font-size: 29px;
-  font-weight: 200;
+  font-size: 17px;
+  font-weight: 400;
+  color: #666;
+  width: 67px;
 }
 .filter {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .filtercolor {
   width: 20px;
@@ -45,10 +54,16 @@
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
+  border: solid 0.2px  rgba(204, 153, 102, 0.629);
 }
 .filtersize {
-  margin-left: 10px;
-  padding: 5px;
+  min-width: 131px;
+  font-weight: 400;
+  padding: 8.5px 30px 8.5px 10px;
+  background-color: transparent;
+  border-color: #d7d7d7;
+  outline: none;
+  color: #666;
 }
 
 .addcontainer {
@@ -68,7 +83,7 @@
   width: 30px;
   height: 30px;
   border-radius: 10px;
-  border: 1px solid teal;
+  border: 1px solid #c96;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,17 +92,24 @@
 }
 .addcontainer button {
   padding: 15px;
-  border: 2px solid teal;
+  border: 2px solid #c96;
   background-color: white;
   cursor: pointer;
   font-weight: 400;
   line-height: 10px;
-  border-radius: 4px;
-  transition: all 0.2s ease-in-out 0s;
-
+  color: #c96;
+  transition: all 0.35s ease;
   letter-spacing: 0.6px;
 }
 
 .addcontainer button:hover {
-  background-color: #4141411e;
+  background-color: #c96;
+  color: white;
+}
+.reviewcontainer {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  white-space: nowrap;
+  margin-bottom: 1.7rem;
 }

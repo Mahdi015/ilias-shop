@@ -3,26 +3,96 @@ import styles from "./Navbar.module.css";
 // import SearchBar from "material-ui-search-bar";
 import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useSelector, useDispatch } from "react-redux";
+import { userLogout } from "../../functions/auth";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setOpen, setLoginOpen }) => {
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => ({ ...state }));
+  if (window.location.href.includes("admin")) {
+    return null;
+  }
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleLoginOpen = () => {
+    setLoginOpen(true);
+  };
+
+  const logout = () => {
+    userLogout()
+      .then((res) => {
+        if (res.data.ok) {
+          navigate("/");
+          window.location.reload();
+        }
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+      });
+  };
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarcontent}>
         <div className={styles.navbarlink}>
-          <a href="/">Home</a>
-          <a href="/shopcollection">Shop Collection</a>
+          <a href="/" id={window.location.pathname == "/" ? styles.active : ""}>
+            Home
+          </a>
+          <a
+            href="/shopcollection"
+            id={
+              window.location.pathname == "/shopcollection" ? styles.active : ""
+            }
+          >
+            Shop Collection
+          </a>
           <a href="#">About Us</a>
-          <a href="#">Contact</a>
+          <a href="#">Contact Us</a>
         </div>
         <div className={styles.navbarbuttons}>
-          <a href="#">
-            {" "}
-            <span>Login</span>
-          </a>
-          <a href="#">
-            {" "}
-            <span>Register</span>
-          </a>
+          {user && user.length != 0 ? (
+            <div className={styles.profiledropdown}>
+              <a id={window.location.pathname == "/a" ? styles.active : ""}>
+                {" "}
+                <span>{user.name}</span>
+              </a>
+              <ul>
+                <li>
+                  <a href="#">Profile</a>
+                </li>
+                {user && user.isAdmin ? (
+                  <li>
+                    <a href="/admindashboard">Admin Dashboard</a>
+                  </li>
+                ) : (
+                  ""
+                )}
+                <li>
+                  <a onClick={() => logout()}>Logout</a>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <>
+              {" "}
+              <a
+                id={window.location.pathname == "/a" ? styles.active : ""}
+                onClick={() => handleLoginOpen()}
+              >
+                {" "}
+                <span>Login</span>
+              </a>
+              <a
+                id={window.location.pathname == "/a" ? styles.active : ""}
+                onClick={() => handleOpen()}
+              >
+                {" "}
+                <span>Register</span>
+              </a>
+            </>
+          )}
         </div>
       </div>
     </div>

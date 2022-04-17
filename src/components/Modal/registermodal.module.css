@@ -1,0 +1,155 @@
+.registercontainer {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.registercontainer span {
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: -0.025em;
+  text-transform: capitalize;
+}
+.sm_border {
+  display: block;
+  height: 2px;
+  width: 150px;
+  margin-bottom: 15px;
+  bottom: -5px;
+  background-color: #c96;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.steper {
+  margin: 0.6rem 0 0.6rem 0;
+  width: 500px;
+}
+.steper span {
+  font-size: 13px;
+}
+.phoneinput {
+  padding: 0 15px 15px 15px;
+  margin-bottom: 2rem;
+}
+.phoneinput input {
+  padding: 8px;
+}
+.phonebtn {
+  padding: 10px;
+  min-width: 120px;
+  border: 2px solid #c96;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 10px;
+  color: #c96;
+  transition: all 0.35s ease;
+  letter-spacing: 0.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.phonebtn:hover,
+.loginui button:hover {
+  background-color: #c96;
+  color: white;
+}
+.registercontainer a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 4rem;
+}
+.registercontainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.codeinput {
+  margin-bottom: 2rem;
+  width: 280px;
+  padding: 8.5px 20px 8.5px 20px;
+  color: #777;
+  background-color: #fafafa;
+  font-weight: 300;
+  border: 1px solid #ebebeb;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.logininput {
+  margin-bottom: 0.6rem;
+  width: 100%;
+  height: 40px;
+  padding: 8.5px 20px 8.5px 20px;
+  color: #777;
+  background-color: #fafafa;
+  font-weight: 300;
+  border: 1px solid #ebebeb;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.logininput:focus,
+.codeinput:focus {
+  border-color: #c96;
+  background-color: white;
+}
+.formcontainer {
+  display: flex;
+}
+.formrow {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.close {
+  float: right;
+}
+.loginui {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  align-content: center;
+  margin-bottom: 2rem;
+}
+.loginui a {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+.loginui a:hover {
+  color: #c96;
+}
+.loginui button {
+  padding: 10px;
+  min-width: 120px;
+  border: 2px solid #c96;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 16px;
+  color: #c96;
+  transition: all 0.35s ease;
+  letter-spacing: 0.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+.loginui span {
+  font-size: 14px;
+  color: #666;
+}

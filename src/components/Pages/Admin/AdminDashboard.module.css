@@ -1,0 +1,138 @@
+.pagecontainer{
+    margin-left: 240px;
+    padding: 76px 12px 60px 50px;
+    background-color: #F1F5F7;
+    min-height: 100vh;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem 3rem;
+}
+.firstrow{
+    display: flex;
+    flex-wrap: wrap;
+   
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.secendrow{
+    display: flex;
+    flex-wrap: wrap;
+   
+  justify-content: space-between;
+  align-items: center;
+}
+.circlespan{
+    width: 45px;
+    height:45px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1.2rem;
+    justify-content: center;
+}
+.secendrowbox{
+    padding: 1rem;
+    min-width: 235px;
+    display: flex;
+    align-items: center;
+   
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid #f1f5f7;
+    border-radius: 0.25rem;
+}
+.firstrowbox{
+   
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid #f1f5f7;
+    border-radius: 0.25rem;
+}
+.firstrowboxtop{
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+.firstrowboxtop h3{
+    color: #343a40;
+    font-weight: 500;
+    font-size: 20px;
+}
+.firstrowboxbot{
+    display: flex;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid rgb(239, 242, 247)
+}
+.badgespan{
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 500;
+    line-height: 1;
+    color: rgb(28, 187, 140);
+    background-color: rgba(28, 187, 140, 0.18);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    margin-right: 1rem;
+}
+.thirdrow{
+    display: flex;
+    flex-wrap: wrap;
+   margin-top: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.chartcontainer{
+    padding: 1rem;
+  
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid #f1f5f7;
+    border-radius: 0.25rem;
+}
+.piechartcontainer{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid #f1f5f7;
+    border-radius: 0.25rem;
+}
+.infocontainer{
+    display: flex;
+    justify-content: space-around;
+}
+.circle{
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+.infocol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.infocol h5{
+    color: #343a40;
+    font-size: 18px;
+}

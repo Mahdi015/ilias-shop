@@ -1,0 +1,149 @@
+.wrapper {
+  margin: 20px 100px 0;
+  padding: 40px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.leftcontainer {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+}
+.userleftcontainer {
+  flex: 0.7;
+  display: flex;
+
+}
+.userinfocontainer{
+    border: 0.1rem dashed #d7d7d7;
+    background-color: #f9f9f9;
+    border-radius: 0.3rem;
+    width: 450px;
+    height: 400px;
+    padding: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+}
+.userinfocontainer h3 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    padding-bottom: 0.7rem;
+    border-bottom: 0.1rem solid #ccc;
+    margin-bottom: 2.5rem;
+    color: #333;
+  }
+  .userinfocontainer span{
+      font-size: 17px;
+      margin-bottom: 0.4rem;
+  }
+.logindiv {
+  padding: 6px;
+  display: flex;
+  border-radius: 0.3rem;
+  border: 1px dashed #d7d7d7;
+  width: fit-content;
+  margin-bottom: 3rem;
+}
+.logindiv span {
+  color: #666;
+}
+.logindiv a {
+  text-decoration: none;
+  color: #c96;
+}
+.formcontainer {
+  display: flex;
+  flex-direction: column;
+}
+.formcontainer h2 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.formrow {
+  display: flex;
+}
+.inputgroup {
+  margin-right: 2rem;
+  width: 100%;
+}
+.inputgroup label {
+  color: #666;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.inputgroup input,
+.inputgroup textarea {
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 40px;
+  padding: 8.5px 20px 8.5px 20px;
+  color: #777;
+  background-color: #fafafa;
+  font-weight: 300;
+  border: 1px solid #ebebeb;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.inputgroup input:focus {
+  border-color: #c96;
+  background-color: white;
+}
+.rightcontainer {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  padding: 1.7rem;
+  border: 0.1rem dashed #d7d7d7;
+  background-color: #f9f9f9;
+  border-radius: 0.3rem;
+  margin-top: 5.5rem;
+}
+.rightcontainer h3 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0;
+  padding-bottom: 0.7rem;
+  border-bottom: 0.1rem solid #ccc;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+.rightcontainer table thead th {
+  color: #333;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.rightcontainer table tbody a {
+  text-decoration: none;
+  color: #666;
+}
+.rightcontainer table tbody td {
+  padding: 0;
+  height: 70px;
+  border-bottom: 0.1rem solid #ebebeb;
+}
+.button button,.updateadressebtn button {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #c96;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 16px;
+  color: #c96;
+  transition: all 0.35s ease;
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.button button:hover,.updateadressebtn button:hover {
+  background-color: #c96;
+  color: white;
+}

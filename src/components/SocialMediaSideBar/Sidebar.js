@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillFacebook, AiFillInstagram } from "react-icons/ai";
+import { AiFillInstagram } from "react-icons/ai";
 import style from "./Sidebar.module.css";
 import { FaFacebook } from "react-icons/fa";
 

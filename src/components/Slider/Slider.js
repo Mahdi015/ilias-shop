@@ -5,6 +5,9 @@ import {
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 import img0 from "../../images/test.png";
+import img1 from "../../images/1.png";
+import img2 from "../../images/2.png";
+
 const Slider = () => {
   const [vwValue, setvwValue] = useState("-100vw");
   const [index, setindex] = useState(0);
@@ -61,7 +64,7 @@ const Slider = () => {
 
         <div className={style.slide}>
           <div className={style.imgContainer}>
-            <img src={img0} />
+            <img src={img1} />
           </div>
           <div className={style.infoContainer}>
             <h1>Ilias Shop2</h1>
@@ -74,7 +77,7 @@ const Slider = () => {
         </div>
         <div className={style.slide}>
           <div className={style.imgContainer}>
-            <img src={img0} />
+            <img src={img2} />
           </div>
           <div className={style.infoContainer}>
             <h1>Ilias Shop3</h1>

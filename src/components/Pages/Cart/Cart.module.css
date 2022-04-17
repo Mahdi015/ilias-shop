@@ -1,6 +1,8 @@
 .wrapper {
   padding: 20px;
+  margin: 0 30px 0 30px;
 }
+
 .top {
   display: flex;
   align-items: center;
@@ -36,6 +38,31 @@
 .info {
   flex: 3;
 }
+.info table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.info table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+.info table th {
+  border-top: none;
+  border-bottom: 0.1rem solid #ebebeb;
+  vertical-align: bottom;
+  padding: 0.6rem 0 0.6rem 0;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #999;
+}
+.info table tbody tr td {
+  padding: 25px 0 35px 0;
+}
+.info table tbody tr {
+  border-bottom: 0.1rem solid #ebebeb;
+}
 .summary {
   flex: 1;
   border-left: 1px solid rgba(0, 0, 0, 0.151);
@@ -46,10 +73,10 @@
 .summary .orderitem {
   margin-bottom: 1.5rem;
 }
-.product {
+/* .product {
   display: flex;
   justify-content: space-between;
-}
+} */
 .productdetails {
   display: flex;
   flex: 2;
@@ -94,4 +121,100 @@
 .removeitem {
   margin: 10px;
   font-size: 20px;
+}
+.product {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding-right: 2rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.productmedia {
+  display: inline-block;
+  margin: 0 2.8rem 0 0;
+  flex-shrink: 0;
+  max-width: 70px;
+  max-height: 70px;
+}
+.productmedia img {
+  width: 100%;
+}
+.product span {
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.product a {
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+.product a:hover {
+  color: #c96;
+}
+.pprice {
+  color: #333;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+.productquantity {
+  max-width: 131px;
+}
+.quantityui {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100px;
+}
+.quantityprepend {
+  position: absolute;
+  left: 0;
+}
+.quantityprepend,
+.quantityappend {
+  position: absolute;
+  top: 0;
+}
+
+.quantityui input {
+  padding: 8.5px 26px;
+  height: auto;
+  border-color: #dadada;
+  background-color: #fff;
+  margin: 0;
+  width: 100px;
+  outline: none;
+  border: 1.8px solid #ebebeb;
+  text-align: center;
+  color: #999;
+}
+.quantityappend {
+  position: absolute;
+  right: 0;
+}
+.quantityui button {
+  min-width: 0;
+  padding: 0.7rem 0.2rem;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.quantityui input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.iconspan {
+  transition: color 0.3s ease;
+  color: #999;
+}
+.iconspan:hover {
+  color: rgb(61, 61, 61);
 }

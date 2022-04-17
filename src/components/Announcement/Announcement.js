@@ -3,6 +3,9 @@ import style from "./Announcement.module.css";
 import { BiPhoneCall } from "react-icons/bi";
 
 const Announcement = () => {
+  if (window.location.href.includes("admin")) {
+    return null;
+  }
   return (
     <div className={style.announcement}>
       <span style={{ flex: "0.5" }}>

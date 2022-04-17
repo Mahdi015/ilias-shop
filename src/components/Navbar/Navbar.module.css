@@ -1,4 +1,5 @@
 .navbar {
+  position: relative;
   width: 100%;
   z-index: 999;
   display: flex;
@@ -7,7 +8,7 @@
   background-color: #222222;
 }
 .navbarcontent {
-  padding: 20px 8rem;
+  padding: 5px 8rem 0 8rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -18,46 +19,58 @@
 .navbarlink {
   flex: 1.3;
 }
-.navbarlink a {
+.navbarlink a,
+.navbarbuttons a {
   text-decoration: none;
   cursor: pointer;
-  /* color: rgba(50, 40, 40, 0.726); */
   color: #fff;
   transition: color 0.4s ease 0s;
-  padding: 0 23px;
+  padding: 15.5px 30px 15.5px 10px;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   line-height: 21px;
+  position: relative;
 }
 .navbarlink a:hover,
 .navbarbuttons a:hover {
   color: #d2461c;
 }
-
+.navbarlink a::before,
+.navbarbuttons a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.7rem;
+  width: 90%;
+  height: 0.5px;
+  background-color: #c96;
+  transform: scaleX(0);
+  -webkit-transform-origin: right center;
+  transform-origin: right center;
+  -webkit-transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+#active::before {
+  display: block;
+  transform: scale(1);
+}
+.navbarlink a:hover::before,
+.navbarbuttons a:hover::before {
+  display: block;
+  transform: scale(1);
+  transform-origin: left center;
+}
 .navbarbuttons {
   flex: 0.2;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.navbarbuttons a {
-  align-items: center;
-  display: flex;
-  text-decoration: none;
-  /* color: rgba(50, 40, 40, 0.863); */
-  color: #fff;
-  transition: color 0.4s ease 0s;
-  cursor: pointer;
-  padding: 0 23px;
-  white-space: nowrap;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  line-height: 21px;
-}
+
 .cartcount {
   width: 20px;
   height: 20px;
@@ -69,4 +82,41 @@
   color: white;
   font-size: 12px;
   margin-left: 3px;
+}
+.profiledropdown {
+  display: flex;
+  position: relative;
+}
+.profiledropdown ul {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 218px;
+  padding: 1rem 0 1.3rem;
+  background-color: #fff;
+  -webkit-box-shadow: 5px 10px 16px rgb(51 51 51 / 5%),
+    -5px 10px 16px rgb(51 51 51 / 5%);
+  box-shadow: 5px 10px 16px rgb(51 51 51 / 5%),
+    -5px 10px 16px rgb(51 51 51 / 5%);
+}
+.profiledropdown ul:hover {
+  display: block;
+}
+.profiledropdown ul li a {
+  display: block;
+  color: #999;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0;
+  padding: 0.5rem 2rem;
+  text-transform: capitalize;
+}
+.profiledropdown ul li a:hover::before {
+  display: none;
+}
+.profiledropdown:hover ul {
+  display: block;
 }

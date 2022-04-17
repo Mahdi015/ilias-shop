@@ -1,8 +1,13 @@
 .container {
   flex: 1;
   margin: 5px;
-  min-width: 280px;
-  height: 350px;
+  /* min-width: 280px;
+  max-width: 250px;
+  max-height: 400px;
+  min-height: 350px; */
+  min-width: 260px;
+  max-width: 270px;
+  height: 365px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,8 +16,9 @@
   flex-direction: column;
 }
 .imgcontainer {
-  height: 75%;
+  height: 70%;
   z-index: 1;
+  cursor: pointer;
 }
 .circle {
   width: 220px;
@@ -23,56 +29,85 @@
   top: 58px;
 }
 .info {
-  opacity: 0;
+  opacity: 1;
   width: 100%;
-  height: 75%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
+  z-index: 0;
   background-color: rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
+  background-color: #f6f6f6;
 }
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background-color: white;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 0;
+  right: 0;
   margin: 10px;
   transition: all 0.5s ease;
   cursor: pointer;
+  opacity: 0;
+  color: #c96;
 }
 .icon:hover {
-  background-color: #e9f5f5;
+  background-color: #c96;
+  color: white;
   transform: scale(1.1);
 }
-.container:hover .info {
+.container:hover .icon{
   opacity: 1;
 }
-.container button {
-  width: 100%;
-  height: 38px;
-  background-color: rgb(255, 255, 255);
-  border-width: 1px;
-  color: rgba(40, 40, 40, 0.781);
-  font-size: 14px;
+
+.container:hover .button button{
+  transform: scaleY(1);
+}
+.button button {
+  padding: 9px;
+  background-color: white;
   cursor: pointer;
-  transition: all 1s ease;
+  line-height: 10px;
+  color: #c96;
+  transition: all 0.35s ease;
+  -webkit-transition: all .35s ease;
+  border: none;
+  width: 94%;
+  font-size: 14px;
+  transform: scaleY(0);
+  position: absolute;
+  transform-origin: bottom;
+  bottom: 6px;
+  left: 9.2px;
+  border-radius: 3px;
   font-weight: 500;
+  font-size: .9rem;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container button:hover {
-  color: rgba(40, 40, 40, 0.486);
+  background-color: #c96;
+  color: white;
 }
 .price {
+  margin-top: 1.5rem;
   z-index: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 .price span {
+  font-size: 16px;
   font-weight: 500;
+  /* color: rgb(82, 76, 76); */
+  color: black;
 }

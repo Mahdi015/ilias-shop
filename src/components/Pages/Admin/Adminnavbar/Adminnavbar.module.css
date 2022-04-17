@@ -1,0 +1,62 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1002;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
+}
+.navbarcontainer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 70px;
+  padding: 0 12px 0 0;
+}
+.navbarleft {
+  display: flex;
+  height: 100%;
+}
+.navbarlogo {
+  background-color: #252b3b;
+  padding: 0 1.5rem;
+  width: 240px;
+  display: flex;
+  align-items: center;
+}
+
+.navbarlogo img {
+  width: 100%;
+  height: auto;
+  outline: none;
+}
+.menutogglebtn{
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+.admindropdown button{
+  background-color: transparent;
+  border: none;
+  padding: 0.47rem 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admindropdown img{
+  height: 36px;
+    width: 36px;
+    background-color: #f1f5f7;
+    padding: 3px;
+    border-radius: 50%;
+}
+.admindropdown span{
+  display: inline-block;
+  margin: 0 0.25rem;
+}
