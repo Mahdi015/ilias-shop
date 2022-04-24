@@ -17,8 +17,9 @@
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 130px;
+  transition: all 0.4s ease-in-out;
 }
 .sm_border {
   content: "";
@@ -51,4 +52,38 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+} 
+.span2{
+  font-size: 0.9rem;
+}
+@media screen and (max-width: 1391px) {
+  .nexarrivals {
+    margin: 0 60px;
+  }
+}
+ 
+
+
+@media screen and (max-width: 1080px) {
+  .nexarrivals {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .span1 {
+    font-size: 14px;
+  }
+  .span2 {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 590px) {
+.infobarcontainer{
+  flex-direction: column;
+  justify-content: center;
+}
+.infobarelement{
+  margin-bottom: 1.5rem;
+}
 }

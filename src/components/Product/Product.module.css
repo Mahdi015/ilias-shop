@@ -1,6 +1,7 @@
 .container {
   flex: 1;
   margin: 5px;
+  margin-right: 20px;
   /* min-width: 280px;
   max-width: 250px;
   max-height: 400px;
@@ -14,6 +15,8 @@
   /* background-color: #f6fbfe; */
   position: relative;
   flex-direction: column;
+  transition: all 0.4s ease-in-out;
+
 }
 .imgcontainer {
   height: 70%;
@@ -110,4 +113,19 @@
   font-weight: 500;
   /* color: rgb(82, 76, 76); */
   color: black;
+}
+@media screen and (max-width: 1391px) {
+  .container {
+    min-width: 220px;
+    max-width: 240px;
+    height: 325px;
+  }
+}
+ 
+@media screen and (max-width: 1080px) {
+  .container {
+    min-width: 180px;
+    max-width: 200px;
+    height: 280px;
+  }
 }

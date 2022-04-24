@@ -92,6 +92,7 @@ const Slider = () => {
       <div className={style.leftarrow}>
         <BsFillArrowLeftCircleFill onClick={() => handleLeft()} size={"2em"} />
       </div>
+      <button className={style.phonebtn} >Shop Now</button>
     </div>
   );
 };

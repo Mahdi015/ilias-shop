@@ -9,3 +9,10 @@
   border-bottom: solid 0.5px rgba(128, 128, 128, 0.493);
   /* background-color: teal; */
 }
+
+@media screen and (max-width: 550px) {
+  .phonespan{
+    display:none
+  }
+}
+

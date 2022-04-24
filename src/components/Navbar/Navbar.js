@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Navbar.module.css";
 // import SearchBar from "material-ui-search-bar";
 import { FaUserCircle } from "react-icons/fa";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineMenu } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { userLogout } from "../../functions/auth";
 import { useNavigate } from "react-router-dom";
@@ -37,6 +37,9 @@ const Navbar = ({ setOpen, setLoginOpen }) => {
     <div className={styles.navbar}>
       <div className={styles.navbarcontent}>
         <div className={styles.navbarlink}>
+          <button className={styles.mobilemenu}>
+            <AiOutlineMenu />
+          </button>
           <a href="/" id={window.location.pathname == "/" ? styles.active : ""}>
             Home
           </a>

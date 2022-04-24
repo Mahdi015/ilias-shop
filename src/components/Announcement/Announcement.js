@@ -8,7 +8,7 @@ const Announcement = () => {
   }
   return (
     <div className={style.announcement}>
-      <span style={{ flex: "0.5" }}>
+      <span className={style.phonespan} style={{ flex: "0.5" }}>
         {" "}
         <BiPhoneCall /> Call: +0123 456 789{" "}
       </span>

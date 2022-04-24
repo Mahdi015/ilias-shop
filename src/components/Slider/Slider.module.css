@@ -7,6 +7,7 @@
   background-color: rgba(204, 153, 102, 0.245);
   margin-bottom: 4rem;
   overflow: hidden;
+  transition: all 0.4s ease-in-out;
 }
 .rightarrow {
   position: absolute;
@@ -44,14 +45,18 @@
   align-items: center;
   width: 100vw;
   height: 78vh;
+  transition: all 0.4s ease-in-out;
 }
 .imgContainer {
   flex: 1;
+  transition: all 0.4s ease-in-out;
+
   height: 100%;
 }
 .imgContainer img {
   height: 95%;
   margin-left: 10rem;
+  transition: all 0.4s ease-in-out;
 }
 .infoContainer {
   flex: 1;
@@ -86,7 +91,69 @@
   border-radius: 30px;
   transition: all 0.4s ease-in-out 0s;
 }
+.phonebtn {
+  display: none;
+  padding: 10px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  width: fit-content;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  text-transform: capitalize;
+  padding: 22px 22px;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  background: #282828;
+  line-height: 10px;
+  border: none;
+  border-radius: 30px;
+  transition: all 0.4s ease-in-out 0s;
+}
 
 .infoContainer button:hover {
   background-color: #d2461c;
+}
+
+@media screen and (max-width: 1280px) {
+  .infoContainer h1 {
+    font-size: 40px;
+  }
+  .infoContainer p {
+    margin: 15px 0;
+    font-size: 17px;
+  }
+  .imgContainer img {
+    margin-left: 7rem;
+  }
+}
+
+@media screen and (max-width: 743px) {
+  .infoContainer p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  .infoContainer {
+    padding: 25px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .infoContainer {
+    display: none;
+  }
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imgContainer img {
+    margin-left: 0;
+  }
+  .phonebtn {
+    display: block;
+  }
 }

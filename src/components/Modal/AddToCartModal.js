@@ -20,6 +20,7 @@ const style = {
   boxShadow: 24,
   height: "100%",
   outline: "none",
+  overflow: "auto",
 
   "@media (max-width: 780px)": {
     height: "100%",
@@ -170,7 +171,7 @@ export default function AddToCartModal({
                     style={{
                       color: "#777",
                       fontWeight: "400",
-                      fontSize: "1.5rem",
+                      fontSize: "1.2rem",
                     }}
                   >
                     Color:
@@ -192,7 +193,7 @@ export default function AddToCartModal({
                     style={{
                       color: "#777",
                       fontWeight: "400",
-                      fontSize: "1.5rem",
+                      fontSize: "1.2rem",
                     }}
                   >
                     Size:
@@ -223,7 +224,7 @@ export default function AddToCartModal({
                     style={{
                       color: "#777",
                       fontWeight: "400",
-                      fontSize: "1.5rem",
+                      fontSize: "1.2rem",
                     }}
                   >
                     Quantity:

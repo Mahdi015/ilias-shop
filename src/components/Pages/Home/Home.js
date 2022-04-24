@@ -25,7 +25,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
     <div>
       {/* {JSON.stringify(products[0].images[0])} */}
       <Slider />
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       <div className={style.textcontainer}>
         <div className={style.spancontainer}>
@@ -85,6 +85,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
               <RiTruckLine size={"2.5em"} />
             </span>
             <span
+              className={style.span1}
               style={{
                 color: "white",
                 fontWeight: "600",
@@ -94,10 +95,10 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
               Payment & Delivery
             </span>
             <span
+              className={style.span2}
               style={{
                 color: "#777",
                 fontWeight: "300",
-                fontSize: "0.9rem",
               }}
             >
               Free shipping for orders over $50
@@ -108,6 +109,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
               <RiRefund2Line size={"2.5em"} />
             </span>
             <span
+              className={style.span1}
               style={{
                 color: "white",
                 fontWeight: "600",
@@ -117,10 +119,10 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
               Return & Refund
             </span>
             <span
+              className={style.span2}
               style={{
                 color: "#777",
                 fontWeight: "300",
-                fontSize: "0.9rem",
               }}
             >
               Free 100% money back guarantee
@@ -131,6 +133,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
               <RiHeadphoneLine size={"2.5em"} />
             </span>
             <span
+              className={style.span1}
               style={{
                 color: "white",
                 fontWeight: "600",
@@ -140,10 +143,10 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
               Quality Support
             </span>
             <span
+              className={style.span2}
               style={{
                 color: "#777",
                 fontWeight: "300",
-                fontSize: "0.9rem",
               }}
             >
               Alway online feedback 24/7
