@@ -26,7 +26,7 @@ const style = {
   "@media (max-width: 780px)": {
     height: "100%",
     width: "100%",
-    padding: "32px 0 32px 0",
+    padding: "32px 20px 32px 20px",
   },
 };
 

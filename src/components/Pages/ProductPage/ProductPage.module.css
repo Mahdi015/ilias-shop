@@ -149,3 +149,28 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 624px) {
+  .wrapper {
+   flex-direction: column;
+   justify-content: center;
+  }
+  .container{
+    padding: 10px;
+  }
+  .imgcontainer{
+    margin-right: 1.5rem;
+  }
+  .addcontainer button {
+    font-size: 10px;
+  }
+  .addcontainer{
+    justify-content: center;
+    align-items: center;
+    margin-left: 4rem;
+    width: fit-content;
+    margin-top: 1rem;
+  }
+  
+}
+ 
