@@ -67,6 +67,9 @@ const Header = () => {
           sx={{
             "& .MuiBadge-badge": { fontSize: 11, height: 18 },
             p: 0.6,
+            ["@media (max-width:780px)"]: {
+              p: 0,
+            },
           }}
         >
           <a href="/cart">

@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { userLogout } from "../../functions/auth";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ setOpen, setLoginOpen }) => {
+const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
   const navigate = useNavigate();
   const { user } = useSelector((state) => ({ ...state }));
   if (window.location.href.includes("admin")) {
@@ -37,7 +37,10 @@ const Navbar = ({ setOpen, setLoginOpen }) => {
     <div className={styles.navbar}>
       <div className={styles.navbarcontent}>
         <div className={styles.navbarlink}>
-          <button className={styles.mobilemenu}>
+          <button
+            onClick={() => setmobileMenu(!mobileMenu)}
+            className={styles.mobilemenu}
+          >
             <AiOutlineMenu />
           </button>
           <a href="/" id={window.location.pathname == "/" ? styles.active : ""}>

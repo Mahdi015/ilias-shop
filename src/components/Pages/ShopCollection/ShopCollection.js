@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "./ShopCollection.module.css";
 import { GrFormAdd, GrFormSubtract } from "react-icons/gr";
 import Product from "../../Product/Product";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import Checkbox from "@mui/material/Checkbox";
-import { color } from "@mui/system";
+import { getAllProducts } from "../../../functions/products";
 
 const ShopCollection = () => {
   const [collectionFilter, setcollectionFilter] = useState(true);
@@ -24,6 +23,16 @@ const ShopCollection = () => {
       setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
     }
   };
+  const [products, setproducts] = useState([]);
+
+  const fetchAllProducts = () => {
+    getAllProducts(1000).then((res) => {
+      setproducts(res.data);
+    });
+  };
+  useEffect(() => {
+    fetchAllProducts();
+  }, []);
   return (
     <>
       <h1
@@ -210,14 +219,9 @@ const ShopCollection = () => {
         </div>
 
         <div className={style.productscotainer}>
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {products && products.length !== 0
+            ? products.map((p, i) => <Product p={p} i={i} />)
+            : ""}
         </div>
       </div>
     </>

@@ -15,7 +15,7 @@
   /* background-color: #f6fbfe; */
   position: relative;
   flex-direction: column;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; 
 
 }
 .imgcontainer {
@@ -23,14 +23,7 @@
   z-index: 1;
   cursor: pointer;
 }
-.circle {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  top: 58px;
-}
+
 .info {
   opacity: 1;
   width: 100%;

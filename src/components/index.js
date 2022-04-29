@@ -17,3 +17,4 @@ export { default as Checkout } from "./Pages/Checkout/Checkout";
 export { default as PageNotFound } from "./Pages/ErrorPages/PageNotFound/PageNotFound";
 export { default as ListProducts } from "./Pages/Admin/AdminPages/ListProducts";
 export { default as ListUsers } from "./Pages/Admin/AdminPages/ListUsers";
+export { default as MobileMenuTab } from "./MobileMenu/MobileMenuTab";

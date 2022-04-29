@@ -1,5 +1,10 @@
 .wrapper {
   display: flex;
+
+}
+.container{
+  display: flex;
+  flex-direction: column;
   padding: 50px;
 }
 .imgcontainer {
@@ -8,10 +13,10 @@
   justify-content: center;
   display: flex;
 }
-.imgcontainer img {
-  width: 50%;
-  object-fit: cover;
-}
+/* .imgcontainer img {
+  
+
+} */
 .infocontainer {
   flex: 1;
   padding: 0px 50px;
@@ -112,4 +117,35 @@
   line-height: 1;
   white-space: nowrap;
   margin-bottom: 1.7rem;
+}
+
+.youmayalsolike{
+ margin-top: 10rem;
+ display: flex;
+ flex-direction: column;
+}
+.spancontainer {
+  position: relative;
+  display: flex;
+  letter-spacing: 0.1em;
+  font-size: 33px;
+  margin-bottom: 4rem;
+  font-weight: 600;
+}
+.sm_border {
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  width: 50%;
+  bottom: 0px;
+  right: 0px;
+  background-color: #c96;
+}
+.textcontainer {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

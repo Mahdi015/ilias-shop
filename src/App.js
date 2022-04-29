@@ -18,6 +18,7 @@ import {
   PageNotFound,
   ListProducts,
   ListUsers,
+  MobileMenuTab,
 } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
@@ -32,6 +33,7 @@ function App() {
   const [Open, setOpen] = useState(false);
   const [LoginOpen, setLoginOpen] = useState(false);
   const [adminVar, setadminVar] = useState(null);
+  const [mobileMenu, setmobileMenu] = useState(false);
 
   const dispatch = useDispatch();
   //CHECK AUTH
@@ -63,51 +65,67 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Router>
-        <Announcement />
-        <Header />
-        <Navbar setOpen={setOpen} setLoginOpen={setLoginOpen} />
-        <RegisterModal
-          Open={Open}
-          setOpen={setOpen}
-          setLoginOpen={setLoginOpen}
-        />
-        <Toaster />
-        <LoginModal LoginOpen={LoginOpen} setLoginOpen={setLoginOpen} />
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/p/:slug" element={<ProductPage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/shopcollection" element={<ShopCollection />} />
-          <Route
-            path="/admindashboard/addproducts"
-            element={<AdminRoutes adminVar={adminVar} />}
-          >
+    <div style={{ overflow: "hidden" }}>
+      <div
+        style={mobileMenu ? { transform: "translate(250px)" } : {}}
+        className="pagewrapper"
+        id={mobileMenu ? "mobilemenuactive" : ""}
+      >
+        <div className="mobileoverlay"></div>
+        <Router>
+          <Announcement />
+          <Header />
+          <Navbar
+            setOpen={setOpen}
+            setLoginOpen={setLoginOpen}
+            setmobileMenu={setmobileMenu}
+            mobileMenu={mobileMenu}
+          />
+          <RegisterModal
+            Open={Open}
+            setOpen={setOpen}
+            setLoginOpen={setLoginOpen}
+          />
+          <Toaster />
+          <LoginModal LoginOpen={LoginOpen} setLoginOpen={setLoginOpen} />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/p/:slug" element={<ProductPage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/shopcollection" element={<ShopCollection />} />
             <Route
               path="/admindashboard/addproducts"
-              element={<Addproducts />}
-            />
-          </Route>
-          <Route path="/admindashboard" element={<AdminRoutes />}>
-            <Route path="/admindashboard" element={<AdminDashboard />} />
-          </Route>
-          <Route path="/admindashboard/listproducts" element={<AdminRoutes />}>
+              element={<AdminRoutes adminVar={adminVar} />}
+            >
+              <Route
+                path="/admindashboard/addproducts"
+                element={<Addproducts />}
+              />
+            </Route>
+            <Route path="/admindashboard" element={<AdminRoutes />}>
+              <Route path="/admindashboard" element={<AdminDashboard />} />
+            </Route>
             <Route
               path="/admindashboard/listproducts"
-              element={<ListProducts />}
-            />
-          </Route>
-          <Route path="/admindashboard/listusers" element={<AdminRoutes />}>
-            <Route path="/admindashboard/listusers" element={<ListUsers />} />
-          </Route>
-          <Route path="/*" element={<PageNotFound />} />
-        </Routes>
-      </Router>
-      <Footer />
-    </>
+              element={<AdminRoutes />}
+            >
+              <Route
+                path="/admindashboard/listproducts"
+                element={<ListProducts />}
+              />
+            </Route>
+            <Route path="/admindashboard/listusers" element={<AdminRoutes />}>
+              <Route path="/admindashboard/listusers" element={<ListUsers />} />
+            </Route>
+            <Route path="/*" element={<PageNotFound />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
+      <MobileMenuTab setmobileMenu={setmobileMenu} mobileMenu={mobileMenu} />
+    </div>
   );
 }
 

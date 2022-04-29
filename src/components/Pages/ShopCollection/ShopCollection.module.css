@@ -1,18 +1,23 @@
 .container {
   display: flex;
   margin: 40px;
+  transition: all 0.4s ease-in-out;
+
 }
 
 .filterpanel {
   flex: 0.7;
   display: flex;
   flex-direction: column;
+  transition: all 0.4s ease-in-out;
+
 }
 .productscotainer {
   flex: 4;
   margin-left: 2rem;
   display: flex;
   flex-wrap: wrap;
+  transition: all 0.4s ease-in-out;
 }
 .filteritem {
   margin: 1.5rem 0 1.5rem 0;
@@ -31,8 +36,6 @@
   transform: scaleY(0);
   position: absolute;
   visibility: hidden;
-  /* -webkit-transition: opacity 600ms, visibility 600ms;
-  transition: opacity 600ms, visibility 600ms; */
   transition: all 0.2s ease-in-out;
   transform-origin: top;
 }
@@ -70,3 +73,24 @@
 .coloroption:hover {
   opacity: 0.7;
 }
+
+@media screen and (max-width: 695px) {
+  .productscotainer {
+    margin-left: 7rem;
+  }
+}
+ 
+
+@media screen and (max-width: 540px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+   
+  }
+  .productscotainer {
+    margin-top: 1rem;
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+ 

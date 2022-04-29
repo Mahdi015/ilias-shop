@@ -1,3 +1,31 @@
 * {
   font-family: var(--font-family);
 }
+.pagewrapper{
+  position: relative;
+  -webkit-transition: -webkit-transform .4s ease;
+  transition: -webkit-transform .4s ease;
+  transition: transform .4s ease;
+  transition: transform .4s ease,-webkit-transform .4s ease;
+  min-height: 100%;
+
+}
+
+.mobileoverlay{
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(25,25,25,.25);
+  /* z-index: 1000; */
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  visibility: hidden;
+  opacity: 0;
+}
+#mobilemenuactive  .mobileoverlay{
+  visibility: visible;
+    opacity: 1;
+}

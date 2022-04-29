@@ -96,7 +96,7 @@
   list-style: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   z-index: 1000;
   min-width: 218px;
   padding: 1rem 0 1.3rem;

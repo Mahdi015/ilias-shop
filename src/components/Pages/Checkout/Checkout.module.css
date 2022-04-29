@@ -147,3 +147,15 @@
   background-color: #c96;
   color: white;
 }
+
+/* 
+@media screen and (max-width: 1388px) {
+  .rightcontainer {
+    flex: 1;
+
+  }
+  .leftcontainer{
+    flex: 0;
+  }
+}
+  */

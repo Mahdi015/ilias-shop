@@ -77,7 +77,6 @@ const Product = ({ p, i }) => {
         p={p}
       />
       <div key={i} className={style.container}>
-        <div className={style.circle}></div>
         <img
           className={style.imgcontainer}
           onClick={() => navigate(`/p/${p.slug}`)}
