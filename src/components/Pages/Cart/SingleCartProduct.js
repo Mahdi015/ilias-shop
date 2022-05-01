@@ -61,11 +61,11 @@ const SingleCartProduct = ({ p }) => {
     }
   };
   return (
-    <tr>
+    <tr style={{ position: "relative" }}>
       <td>
         <div className={style.product}>
           <figure className={style.productmedia}>
-            <a href="#">
+            <a style={{ display: "block" }} href="#">
               <img src={images && images[0].url} />
             </a>
           </figure>
@@ -78,7 +78,9 @@ const SingleCartProduct = ({ p }) => {
           </a>
         </div>
       </td>
-      <td className={style.pprice}>{price} TND</td>
+      <td className={style.pprice}>
+        <div className={style.ppricediv}>{price} TND</div>
+      </td>
       <td>
         <div className={style.productquantity}>
           <div className={style.quantityui}>
@@ -102,26 +104,30 @@ const SingleCartProduct = ({ p }) => {
         </div>
       </td>
       <td>
-        <span
-          style={{
-            color: "#c96",
-            fontWeight: "400",
-            fontSize: "1.1rem",
-            lineHeight: "1.25",
-          }}
-        >
-          {price * count} TND
-        </span>
+        <div className={style.pricediv}>
+          <span
+            style={{
+              color: "#c96",
+              fontWeight: "400",
+              fontSize: "1.1rem",
+              lineHeight: "1.25",
+            }}
+          >
+            {price * count} TND
+          </span>
+        </div>
       </td>
       <td>
-        <span className={style.iconspan}>
-          {" "}
-          <AiOutlineDelete
-            onClick={() => deleteProduct(p._id)}
-            size={"1.1em"}
-            style={{ cursor: "pointer" }}
-          />
-        </span>
+        <div className={style.deletediv}>
+          <span className={style.iconspan}>
+            {" "}
+            <AiOutlineDelete
+              onClick={() => deleteProduct(p._id)}
+              size={"1.1em"}
+              style={{ cursor: "pointer" }}
+            />
+          </span>
+        </div>
       </td>
     </tr>
   );

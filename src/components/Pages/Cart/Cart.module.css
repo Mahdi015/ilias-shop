@@ -1,9 +1,11 @@
 .wrapper {
+  transition: all 0.4s ease-in-out;
   padding: 20px;
   margin: 0 30px 0 30px;
 }
 
 .top {
+  transition: all 0.4s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,14 +33,17 @@
   margin: 0px 10px;
 }
 .bottom {
+  transition: all 0.4s ease-in-out;
   padding: 20px;
   display: flex;
   justify-content: space-between;
 }
 .info {
+  transition: all 0.4s ease-in-out;
   flex: 3;
 }
 .info table {
+  transition: all 0.4s ease-in-out;
   width: 100%;
   border-collapse: collapse;
 }
@@ -65,10 +70,16 @@
 }
 .summary {
   flex: 1;
-  border-left: 1px solid rgba(0, 0, 0, 0.151);
-  padding: 20px;
+  /* border-left: 1px solid rgba(0, 0, 0, 0.151); */
+  /* padding: 20px; */
   display: flex;
   flex-direction: column;
+
+  margin-left: 2rem;
+  padding: 25px 30px 30px;
+  border: 0.1rem dashed #d7d7d7;
+  background-color: #f9f9f9;
+  border-radius: 0.3rem;
 }
 .summary .orderitem {
   margin-bottom: 1.5rem;
@@ -118,6 +129,11 @@
   display: flex;
   justify-content: space-between;
 }
+.orderitem h3{
+  font-weight: 400;
+  color: #333;
+  font-size: 1.1rem;
+}
 .removeitem {
   margin: 10px;
   font-size: 20px;
@@ -139,6 +155,8 @@
 }
 .productmedia img {
   width: 100%;
+  object-fit: fill;
+
 }
 .product span {
   font-weight: 400;
@@ -188,7 +206,7 @@
   border-color: #dadada;
   background-color: #fff;
   margin: 0;
-  width: 100px;
+  width: 100%;
   outline: none;
   border: 1.8px solid #ebebeb;
   text-align: center;
@@ -217,4 +235,121 @@
 }
 .iconspan:hover {
   color: rgb(61, 61, 61);
+}
+
+
+
+.continushopbtn{
+  visibility: hidden;
+}
+.checkoutbtn ,.continushopbtn {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #c96;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 16px;
+  color: #c96;
+  transition: all 0.35s ease;
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.checkoutbtn:hover,.continushopbtn:hover {
+  background-color: #c96;
+  color: white;
+}
+
+@media screen and (max-width: 853px)   {
+  .wrapper{
+    margin: 0;
+    padding: 10px;
+  }
+  .bottom{
+    flex-direction: column;
+  }
+
+	/* Force table to not be like tables anymore */
+	.info table, .info table thead, .info table tbody, .info table tbody th,.info table tbody td,.info table tbody tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.info table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.info table tbody tr { border: 1px solid #ccc;position: relative; }
+	
+	.info table tbody td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		/* position: relative; */
+		padding-left: 50%; 
+    height: 100%;
+	}
+	.info table tbody td {
+    border-bottom: none;
+  }
+
+  .info table tbody tr td {
+    padding: 10px 0 5px 0;
+  }
+  .product{
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+  }
+  .product a {
+    display: block;
+  }
+  .productmedia{
+    display: block;
+    margin: 0 0 1.2rem 0;
+  }
+  .ppricediv{
+    display: flex;
+    justify-content: center;
+  }
+  .quantityui{
+
+    margin: .5rem auto;
+  }
+  .productquantity{
+   max-width: 100%;
+  }
+  .quantityui{
+    width: 120px;
+  }
+  .pricediv{
+    display: flex;
+    justify-content: center;
+  }
+  .deletediv{
+    position: absolute;
+    top: 0;
+    right: .3rem;
+    padding: 0.5rem;
+  }
+  .summary{
+    margin-top: 3rem;
+    margin-left: 0;
+  }
+  /* .toptexts span {
+    display: none;
+  } */
+  .topbutton{
+   display: none;
+  }
+  .continushopbtn{
+    visibility: visible;
+  }
+
 }

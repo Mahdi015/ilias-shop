@@ -51,37 +51,48 @@ const Cart = () => {
             </table>
           </div>
           <div className={style.summary}>
-            <h2 style={{ fontWeight: "300", marginBottom: "2rem" }}>
+            <h3
+              style={{
+                fontWeight: "500",
+                marginBottom: "2rem",
+                borderBottom: "0.1rem solid #ccc",
+                color: "#333",
+                paddingBottom: "0.7rem",
+              }}
+            >
               Order summary
-            </h2>
+            </h3>
+
             <div className={style.orderitem}>
-              <h3 style={{ fontWeight: "300" }}>SubTotal</h3>
-              <h3 style={{ fontWeight: "300" }}>
+              <h3 style={{ fontWeight: "400" }}>SubTotal</h3>
+              <h3 style={{ fontWeight: "400" }}>
                 {" "}
                 {cartTotal && `${cartTotal} TND`}
               </h3>
             </div>
             <div className={style.orderitem}>
-              <h3 style={{ fontWeight: "300" }}>Sipping Cost</h3>
-              <h3 style={{ fontWeight: "300" }}>7 TND</h3>
+              <h3> Sipping Cost</h3>
+              <h3> 7 TND</h3>
             </div>
             <div className={style.orderitem}>
-              <h3 style={{ fontWeight: "300" }}>Discount</h3>
-              <h3 style={{ fontWeight: "300" }}>5 TND</h3>
+              <h3>Discount</h3>
+              <h3>5 TND</h3>
             </div>
-            <div className={style.orderitem}>
-              <h3 style={{ fontWeight: "600" }}>Total</h3>
-              <h3 style={{ fontWeight: "600" }}>
+            <div style={{ margin: "1rem 0" }} className={style.orderitem}>
+              <h3 style={{ fontWeight: "500", color: "#c96" }}>Total</h3>
+              <h3 style={{ fontWeight: "500", color: "#c96" }}>
                 {cartTotal && `${cartTotal + 12} TND`}
               </h3>
             </div>
             <button
               style={{ width: "100%" }}
               onClick={() => navigate("/checkout")}
-              className={style.topbutton}
+              className={style.checkoutbtn}
             >
               Chekout
             </button>
+
+            <button className={style.continushopbtn}>Continue Shopping</button>
           </div>
         </div>
       ) : (
