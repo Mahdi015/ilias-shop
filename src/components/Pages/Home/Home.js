@@ -4,6 +4,8 @@ import Product from "../../Product/Product";
 import style from "./Home.module.css";
 import { RiTruckLine, RiRefund2Line, RiHeadphoneLine } from "react-icons/ri";
 import { getAllProducts } from "../../../functions/products";
+// import { testcors } from "../../../functions/auth";
+
 import { useEffect } from "react";
 import { useState } from "react";
 import Skeleton from "@mui/material/Skeleton";
@@ -19,6 +21,10 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
   };
   useEffect(() => {
     fetchAllProducts();
+
+    // testcors().then((res) => {
+    //   console.log(res.data);
+    // });
   }, []);
 
   return (

@@ -19,6 +19,7 @@ import {
   ListProducts,
   ListUsers,
   MobileMenuTab,
+  OrderConfirmation,
 } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
@@ -47,6 +48,9 @@ function App() {
             _id: res.data.id,
             name: res.data.name,
             mobileNumber: res.data.mobileNumber,
+            adresse: res.data.adresse,
+            city: res.data.city,
+            zipcode: res.data.zipcode,
           },
         });
         if (res.data.isAdmin) {
@@ -95,6 +99,10 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/shopcollection" element={<ShopCollection />} />
+            <Route
+              path="/orderconfirmation/:slug"
+              element={<OrderConfirmation />}
+            />
             <Route
               path="/admindashboard/addproducts"
               element={<AdminRoutes adminVar={adminVar} />}

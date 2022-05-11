@@ -82,17 +82,17 @@ const Product = ({ p, i }) => {
           onClick={() => navigate(`/p/${p.slug}`)}
           src={images && images[0].url}
         />
+        <div style={{ top: "50px" }} className={style.icon}>
+          <AiOutlineShoppingCart onClick={() => handleAddToCart()} />
+        </div>
+        <div style={{ top: "100px" }} className={style.icon}>
+          <AiOutlineEye onClick={() => navigate(`/p/${p.slug}`)} />
+        </div>
+        <div className={style.icon}>
+          {" "}
+          <AiOutlineHeart />
+        </div>
         <div className={style.info}>
-          <div style={{ top: "50px" }} className={style.icon}>
-            <AiOutlineShoppingCart onClick={() => handleAddToCart()} />
-          </div>
-          <div style={{ top: "100px" }} className={style.icon}>
-            <AiOutlineEye onClick={() => navigate(`/p/${p.slug}`)} />
-          </div>
-          <div className={style.icon}>
-            {" "}
-            <AiOutlineHeart />
-          </div>
           <div className={style.button}>
             <button onClick={() => setAddToCartModalOpen(true)}>
               <MdAddShoppingCart style={{ marginRight: "5px" }} /> Add To Cart

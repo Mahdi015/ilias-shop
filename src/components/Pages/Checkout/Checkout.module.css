@@ -3,6 +3,7 @@
   padding: 40px 20px 20px;
   display: flex;
   justify-content: space-between;
+  transition: all 0.4s ease-in-out;
 }
 .leftcontainer {
   flex: 0.7;
@@ -12,32 +13,31 @@
 .userleftcontainer {
   flex: 0.7;
   display: flex;
-
 }
-.userinfocontainer{
-    border: 0.1rem dashed #d7d7d7;
-    background-color: #f9f9f9;
-    border-radius: 0.3rem;
-    width: 450px;
-    height: 400px;
-    padding: 1.7rem;
-    display: flex;
-    flex-direction: column;
-    margin-left: 3rem;
+.userinfocontainer {
+  border: 0.1rem dashed #d7d7d7;
+  background-color: #f9f9f9;
+  border-radius: 0.3rem;
+  width: 450px;
+  height: 400px;
+  padding: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
 }
 .userinfocontainer h3 {
-    font-weight: 500;
-    font-size: 1.2rem;
-    letter-spacing: 0;
-    padding-bottom: 0.7rem;
-    border-bottom: 0.1rem solid #ccc;
-    margin-bottom: 2.5rem;
-    color: #333;
-  }
-  .userinfocontainer span{
-      font-size: 17px;
-      margin-bottom: 0.4rem;
-  }
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0;
+  padding-bottom: 0.7rem;
+  border-bottom: 0.1rem solid #ccc;
+  margin-bottom: 2.5rem;
+  color: #333;
+}
+.userinfocontainer span {
+  font-size: 17px;
+  margin-bottom: 0.4rem;
+}
 .logindiv {
   padding: 6px;
   display: flex;
@@ -45,9 +45,11 @@
   border: 1px dashed #d7d7d7;
   width: fit-content;
   margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 .logindiv span {
   color: #666;
+  white-space: nowrap;
 }
 .logindiv a {
   text-decoration: none;
@@ -126,7 +128,8 @@
   height: 70px;
   border-bottom: 0.1rem solid #ebebeb;
 }
-.button button,.updateadressebtn button {
+.button button,
+.updateadressebtn button {
   padding: 10px;
   width: 100%;
   border: 2px solid #c96;
@@ -143,19 +146,123 @@
   align-items: center;
   margin-top: 1rem;
 }
-.button button:hover,.updateadressebtn button:hover {
+.button button:hover,
+.updateadressebtn button:hover {
   background-color: #c96;
   color: white;
 }
+.inputgroup textarea {
+  width: 950px;
+  height: 166px;
+}
 
-/* 
-@media screen and (max-width: 1388px) {
-  .rightcontainer {
-    flex: 1;
 
+.occontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  margin-top: 2rem;
+
+}
+.occontainer h3{
+  margin-top: 1rem;
+  color: #333;
+}
+.occontainer p{
+  color: #777;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.occontainer img{
+  width: 480px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 480px) {
+  .occontainer img {
+    width: 280px;
   }
-  .leftcontainer{
-    flex: 0;
+  .occontainer h3 p {
+    font-size: 100%;
   }
 }
-  */
+
+@media screen and (max-width: 280px) {
+
+  .occontainer h3  {
+    font-size: 15px;
+  }
+  .occontainer p  {
+    font-size: 12px;
+  }
+}
+
+
+
+@media screen and (max-width: 1388px) {
+  .wrapper {
+    margin: 20px 20px 0;
+  }
+}
+
+@media screen and (max-width: 1228px) {
+  .inputgroup input {
+    width: 400px;
+  }
+  .formrow {
+    flex-direction: column;
+  }
+  .leftcontainer {
+    width: 500px;
+  }
+  .inputgroup {
+    display: flex;
+    align-items: center;
+  }
+  .inputgroup label {
+    width: 180px;
+  }
+  .streetadrdiv {
+    display: flex;
+    flex-direction: column;
+  }
+  .inputgroup textarea {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .wrapper {
+    margin: 20px 20px 0;
+    flex-direction: column;
+  }
+  .inputgroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .inputgroup input {
+    width: 100%;
+  }
+  .streetadrdiv {
+    width: 100%;
+  }
+
+  .leftcontainer {
+    width: 100%;
+  }
+  .inputgroup textarea {
+    width: 100%;
+  }
+  .userinfocontainer{
+    justify-content: center;
+    width: 100%;
+    margin: 2rem 0;
+  }
+}
+@media screen and (max-width: 580px) {
+  .logindiv {
+    font-size: 15px;
+  }
+}

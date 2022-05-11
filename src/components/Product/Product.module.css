@@ -16,12 +16,19 @@
   position: relative;
   flex-direction: column;
   transition: all 0.4s ease-in-out; 
+  overflow: hidden;
 
 }
 .imgcontainer {
   height: 70%;
   z-index: 1;
   cursor: pointer;
+  margin-bottom: 2.7rem;
+  transition: transform 0.4s ease-in-out; 
+  overflow:hidden;
+  object-fit: cover;
+
+
 }
 
 .info {
@@ -38,8 +45,10 @@
   background-color: rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
   background-color: #f6f6f6;
+  
 }
 .icon {
+  z-index: 999;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -55,6 +64,8 @@
   cursor: pointer;
   opacity: 0;
   color: #c96;
+  
+  
 }
 .icon:hover {
   background-color: #c96;
@@ -67,6 +78,13 @@
 
 .container:hover .button button{
   transform: scaleY(1);
+}
+.container:hover .price{
+  visibility: hidden;
+  opacity: 0;
+}
+.container:hover .imgcontainer{
+  transform: scale(1.1);
 }
 .button button {
   padding: 9px;
@@ -82,7 +100,7 @@
   transform: scaleY(0);
   position: absolute;
   transform-origin: bottom;
-  bottom: 6px;
+  bottom: 10px;
   left: 9.2px;
   border-radius: 3px;
   font-weight: 500;
@@ -97,16 +115,27 @@
   color: white;
 }
 .price {
-  margin-top: 1.5rem;
+  position:absolute;
+  /* margin-top: 1.5rem; */
   z-index: 1;
-  margin-bottom: 1.5rem;
+  bottom: 20px;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.35s ease;
+  -webkit-transition: all .35s ease;
+  /* margin-bottom: 1.5rem; */
 }
 .price span {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 600;
   /* color: rgb(82, 76, 76); */
-  color: black;
+  color: rgb(51, 50, 50);
+  background-color: rgba(220, 156, 93, 0.636);
+  /* border: 2px solid #c96; */
+  padding: .5rem 1rem;
+  border-radius: 28px;
 }
+
 @media screen and (max-width: 1391px) {
   .container {
     min-width: 220px;
@@ -122,3 +151,6 @@
     height: 280px;
   }
 }
+
+
+

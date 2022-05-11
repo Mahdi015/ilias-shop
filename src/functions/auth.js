@@ -44,6 +44,13 @@ export const testCookie = async () =>
     }
   );
 
+export const testcors = async () =>
+  await axios.get(
+    `http://localhost:8080/getallfeatures`,
+
+    {}
+  );
+
 export const verifyAdmin = async () =>
   await axios.post(
     `${process.env.REACT_APP_API}/auth/checkadmin`,
