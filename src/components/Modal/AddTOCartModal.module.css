@@ -48,6 +48,9 @@
   cursor: pointer;
   transition: all 0.35s ease-out;
 }
+#active {
+  border: 2px solid #c96;
+}
 .color:hover {
   border: 2px solid #c96;
 }

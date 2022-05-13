@@ -31,7 +31,7 @@ const Checkout = () => {
     cart.map((c) => {
       total += c.price * c.count;
     });
-    setcartTotal(total);
+    setcartTotal(total + 7);
   }, [cart]);
 
   const handleCheckOut = (e) => {
@@ -43,7 +43,7 @@ const Checkout = () => {
         cart = JSON.parse(localStorage.getItem("cart"));
       }
     }
-    createOrderNoUser(cart, clientInfos, user)
+    createOrderNoUser(cart, clientInfos, user, cartTotal)
       .then((res) => {
         toast.success("Order Sucsseed !");
         navigate(`/orderconfirmation/${res.data._id}`);
@@ -233,7 +233,7 @@ const Checkout = () => {
             >
               <td style={{ borderBottom: "none" }}>Total</td>
               <td style={{ textAlign: "end", borderBottom: "none" }}>
-                {cartTotal + 7} TND
+                {cartTotal} TND
               </td>
             </tr>
           </tbody>

@@ -20,6 +20,7 @@ import {
   ListUsers,
   MobileMenuTab,
   OrderConfirmation,
+  ListOrders,
 } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
@@ -126,6 +127,12 @@ function App() {
             </Route>
             <Route path="/admindashboard/listusers" element={<AdminRoutes />}>
               <Route path="/admindashboard/listusers" element={<ListUsers />} />
+            </Route>
+            <Route path="/admindashboard/listorders" element={<AdminRoutes />}>
+              <Route
+                path="/admindashboard/listorders"
+                element={<ListOrders />}
+              />
             </Route>
             <Route path="/*" element={<PageNotFound />} />
           </Routes>

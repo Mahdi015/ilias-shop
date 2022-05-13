@@ -134,7 +134,14 @@ const Adminsidebar = () => {
             </a>
           </li>
           <li className={style.menuitem}>
-            <a href="#">
+            <a
+              href="/admindashboard/listorders"
+              id={
+                window.location.pathname == "/admindashboard/listorders"
+                  ? style.active
+                  : ""
+              }
+            >
               <SiShopify size={"1.2em"} />
               <span style={{ marginLeft: "0.25rem" }}>Orders</span>
             </a>

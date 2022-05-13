@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import Adminnavbar from "./Adminnavbar/Adminnavbar";
 import Adminsidebar from "./Adminsidebar/Adminsidebar";
 import style from "./AdminDashboard.module.css";
@@ -260,10 +259,18 @@ const AdminDashboard = () => {
                 <YAxis />
                 <Tooltip />
                 <Area
+                  strokeWidth={3}
                   type="monotone"
                   dataKey="uv"
-                  stroke="#8884d8"
-                  fill="#8884d8"
+                  stroke="#679ADC"
+                  fill="#C7E5EC"
+                />
+                <Area
+                  strokeWidth={3}
+                  type="monotone"
+                  dataKey="pv"
+                  stroke="#fc8686"
+                  fill="#FCD9BD"
                 />
               </AreaChart>
             </div>
@@ -276,7 +283,7 @@ const AdminDashboard = () => {
                       style={{ backgroundColor: "#EEB902" }}
                       className={style.circle}
                     ></div>
-                    <span style={{ color: "#505d69", fontSize: "15px" }}>
+                    <span style={{ color: "#F3D676", fontSize: "15px" }}>
                       Product A
                     </span>
                   </div>
@@ -288,7 +295,7 @@ const AdminDashboard = () => {
                       style={{ backgroundColor: "#5664D2" }}
                       className={style.circle}
                     ></div>
-                    <span style={{ color: "#505d69", fontSize: "15px" }}>
+                    <span style={{ color: "#88AAF3", fontSize: "15px" }}>
                       Product B
                     </span>
                   </div>
@@ -300,7 +307,7 @@ const AdminDashboard = () => {
                       style={{ backgroundColor: "#1CBB8C" }}
                       className={style.circle}
                     ></div>
-                    <span style={{ color: "#505d69", fontSize: "15px" }}>
+                    <span style={{ color: "#50D7AB", fontSize: "15px" }}>
                       Product C
                     </span>
                   </div>

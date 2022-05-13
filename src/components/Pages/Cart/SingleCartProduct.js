@@ -3,9 +3,12 @@ import style from "./Cart.module.css";
 import { GrFormAdd, GrFormSubtract } from "react-icons/gr";
 import { AiOutlineDelete } from "react-icons/ai";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const SingleCartProduct = ({ p }) => {
   const dispatch = useDispatch();
-  const { images, title, count, price, size, color } = p;
+  const navigate = useNavigate();
+  const { images, title, count, price, size, color, slug } = p;
   const addCount = () => {
     let cart = [];
     if (typeof window !== undefined) {
@@ -49,7 +52,7 @@ const SingleCartProduct = ({ p }) => {
         cart = JSON.parse(localStorage.getItem("cart"));
       }
       cart.map((product, i) => {
-        if (product._id === id) {
+        if (product.id === id) {
           cart.splice(i, 1);
         }
       });
@@ -66,13 +69,13 @@ const SingleCartProduct = ({ p }) => {
         <div className={style.product}>
           <figure className={style.productmedia}>
             <a style={{ display: "block" }} href="#">
-              <img src={images && images[0].url} />
+              <img src={p.selectedcolorimg && p.selectedcolorimg} />
             </a>
           </figure>
 
           <a href="#">
             {" "}
-            <span>
+            <span onClick={() => navigate(`/p/${slug}`)}>
               {title}, {color}, {size}
             </span>
           </a>
@@ -122,7 +125,7 @@ const SingleCartProduct = ({ p }) => {
           <span className={style.iconspan}>
             {" "}
             <AiOutlineDelete
-              onClick={() => deleteProduct(p._id)}
+              onClick={() => deleteProduct(p.id)}
               size={"1.1em"}
               style={{ cursor: "pointer" }}
             />

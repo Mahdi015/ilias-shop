@@ -8,7 +8,10 @@
   margin-bottom: 4rem;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
+  scroll-snap-type: x mandatory;
+
 }
+
 .rightarrow {
   position: absolute;
   top: 0;
@@ -39,6 +42,7 @@
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
+  scroll-snap-type: x mandatory;
 }
 .slide {
   display: flex;
@@ -46,6 +50,7 @@
   width: 100vw;
   height: 78vh;
   transition: all 0.4s ease-in-out;
+  scroll-snap-align: start;
 }
 .imgContainer {
   flex: 1;
@@ -54,7 +59,9 @@
   height: 100%;
 }
 .imgContainer img {
-  height: 95%;
+  height: 100%;
+ 
+  object-fit: cover;
   margin-left: 10rem;
   transition: all 0.4s ease-in-out;
 }
@@ -152,8 +159,18 @@
   }
   .imgContainer img {
     margin-left: 0;
+    
   }
   .phonebtn {
     display: block;
   }
+}
+
+
+@media screen and (max-width: 330px) {
+
+  .imgContainer img {
+    width: 100%;
+  }
+
 }

@@ -39,7 +39,7 @@ const Header = () => {
         cart = JSON.parse(localStorage.getItem("cart"));
       }
       cart.map((product, i) => {
-        if (product._id === id) {
+        if (product.id === id) {
           cart.splice(i, 1);
         }
       });
@@ -132,73 +132,82 @@ const Header = () => {
                   {dropdownVisible && dropdownVisible == true && (
                     <div className={styles.cartdropdown}>
                       <ul>
-                        {cart && cart.length !== 0 ? (
-                          cart.map((p, i) => (
-                            <li id={i}>
-                              <div className={styles.cartdropdownitem}>
-                                <div className={styles.productcartdetails}>
-                                  <h4
-                                    style={{
-                                      fontWeight: "400",
-                                      color: "#666",
-                                    }}
+                        <div style={{ maxHeight: "230px", overflow: "auto" }}>
+                          {cart && cart.length !== 0 ? (
+                            cart.map((p, i) => (
+                              <li id={i}>
+                                <div className={styles.cartdropdownitem}>
+                                  <div className={styles.productcartdetails}>
+                                    <h4
+                                      style={{
+                                        fontWeight: "400",
+                                        color: "#666",
+                                      }}
+                                    >
+                                      <a
+                                        style={{
+                                          padding: 0,
+                                          fontWeight: 400,
+                                          fontSize: ".9rem",
+                                        }}
+                                        href={`/p/${p.slug}`}
+                                      >
+                                        {p.title}
+                                      </a>
+                                    </h4>
+                                    <span
+                                      style={{
+                                        color: "#999",
+                                        fontSize: "13px",
+                                      }}
+                                    >
+                                      {p.count} * {p.price} TND
+                                    </span>
+                                  </div>
+                                  <figure
+                                    className={styles.productimgcontainer}
                                   >
                                     <a
-                                      style={{
-                                        padding: 0,
-                                        fontWeight: 400,
-                                        fontSize: ".9rem",
-                                      }}
                                       href={`/p/${p.slug}`}
+                                      style={{ padding: 0 }}
                                     >
-                                      {p.title}
+                                      <img
+                                        src={
+                                          p.selectedcolorimg &&
+                                          p.selectedcolorimg
+                                        }
+                                      />
                                     </a>
-                                  </h4>
-                                  <span
-                                    style={{
-                                      color: "#999",
-                                      fontSize: "13px",
-                                    }}
-                                  >
-                                    {p.count} * {p.price} TND
-                                  </span>
+                                  </figure>
+                                  <button>
+                                    <GrClose
+                                      onClick={() => deleteProduct(p.id)}
+                                    />
+                                  </button>
                                 </div>
-                                <figure className={styles.productimgcontainer}>
-                                  <a
-                                    href={`/p/${p.slug}`}
-                                    style={{ padding: 0 }}
-                                  >
-                                    <img src={p.images && p.images[0].url} />
-                                  </a>
-                                </figure>
-                                <button>
-                                  <GrClose
-                                    onClick={() => deleteProduct(p._id)}
-                                  />
-                                </button>
-                              </div>
-                            </li>
-                          ))
-                        ) : (
-                          <li
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                            }}
-                          >
-                            <h4
+                              </li>
+                            ))
+                          ) : (
+                            <li
                               style={{
-                                color: "#666",
-                                fontSize: ".9rem",
-                                marginTop: ".5rem",
-                                fontWeight: "400",
-                                letterSpacing: "1px",
+                                display: "flex",
+                                justifyContent: "center",
                               }}
                             >
-                              No products in cart
-                            </h4>
-                          </li>
-                        )}
+                              <h4
+                                style={{
+                                  color: "#666",
+                                  fontSize: ".9rem",
+                                  marginTop: ".5rem",
+                                  fontWeight: "400",
+                                  letterSpacing: "1px",
+                                }}
+                              >
+                                No products in cart
+                              </h4>
+                            </li>
+                          )}
+                        </div>
                         {cart && cart.length !== 0 && (
                           <>
                             <div className={styles.dropdowncarttotal}>

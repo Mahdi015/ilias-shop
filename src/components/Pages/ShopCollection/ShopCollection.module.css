@@ -1,23 +1,32 @@
 .container {
   display: flex;
-  margin: 40px;
+  margin: 40px 10px 40px 40px;
   transition: all 0.4s ease-in-out;
 
 }
 
 .filterpanel {
-  flex: 0.7;
+  width: 250px;
   display: flex;
   flex-direction: column;
   transition: all 0.4s ease-in-out;
 
 }
 .productscotainer {
-  flex: 4;
+  /* flex: 4; */
   margin-left: 2rem;
   display: flex;
   flex-wrap: wrap;
   transition: all 0.4s ease-in-out;
+  justify-content: center;
+
+    align-items: center;
+    width: 100%;
+}
+.pcontainer{
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 25%;
 }
 .filteritem {
   margin: 1.5rem 0 1.5rem 0;
@@ -75,9 +84,7 @@
 }
 
 @media screen and (max-width: 695px) {
-  .productscotainer {
-    margin-left: 7rem;
-  }
+
 }
  
 
@@ -91,6 +98,9 @@
     margin-top: 1rem;
     margin-left: 0;
     justify-content: center;
+  }
+  .filterpanel{
+    width: 100%;
   }
 }
  

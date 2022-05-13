@@ -6,7 +6,7 @@ const data = [
   { name: "Product B", value: 26 },
   { name: "Product C", value: 34 },
 ];
-const COLORS = ["#EEB902", "#5664D2", "#1CBB8C"];
+const COLORS = ["#F3D676", "#88AAF3", "#50D7AB"];
 
 export default class Testchart extends PureComponent {
   static demoUrl =

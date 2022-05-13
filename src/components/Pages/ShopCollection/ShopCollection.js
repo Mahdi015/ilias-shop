@@ -38,8 +38,8 @@ const ShopCollection = () => {
       <h1
         style={{
           textAlign: "center",
-          fontStyle: "italic",
-          fontWeight: "300",
+          color: "#333",
+          fontWeight: "400",
           margin: "2rem 0 2rem 0",
         }}
       >
@@ -220,7 +220,12 @@ const ShopCollection = () => {
 
         <div className={style.productscotainer}>
           {products && products.length !== 0
-            ? products.map((p, i) => <Product p={p} i={i} />)
+            ? products.map((p, i) => (
+                <div className={style.pcontainer}>
+                  {" "}
+                  <Product p={p} i={i} />
+                </div>
+              ))
             : ""}
         </div>
       </div>

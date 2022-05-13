@@ -4,6 +4,7 @@ import Product from "../../Product/Product";
 import style from "./Home.module.css";
 import { RiTruckLine, RiRefund2Line, RiHeadphoneLine } from "react-icons/ri";
 import { getAllProducts } from "../../../functions/products";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 // import { testcors } from "../../../functions/auth";
 
 import { useEffect } from "react";
@@ -31,6 +32,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
     <div>
       {/* {JSON.stringify(products[0].images[0])} */}
       <Slider />
+
       {/* <Sidebar /> */}
 
       <div className={style.textcontainer}>
@@ -41,7 +43,11 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
       </div>
       <div className={style.nexarrivals}>
         {products && products.length !== 0 ? (
-          products.map((p, i) => <Product p={p} i={i} />)
+          products.map((p, i) => (
+            <div className={style.pcontainer}>
+              <Product p={p} i={i} />
+            </div>
+          ))
         ) : (
           <>
             <Stack spacing={1}>
@@ -212,6 +218,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
           </>
         )}
       </div>
+      <MessengerCustomerChat pageId="256707057867239" appId="173038394999956" />
     </div>
   );
 };

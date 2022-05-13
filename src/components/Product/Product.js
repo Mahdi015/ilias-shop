@@ -78,6 +78,7 @@ const Product = ({ p, i }) => {
       />
       <div key={i} className={style.container}>
         <img
+          unselectable="on"
           className={style.imgcontainer}
           onClick={() => navigate(`/p/${p.slug}`)}
           src={images && images[0].url}

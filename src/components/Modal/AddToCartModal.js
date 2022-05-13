@@ -38,7 +38,10 @@ export default function AddToCartModal({
 
   const navigate = useNavigate();
   const [value, setvalue] = useState("");
-  const [selectedColor, setselectedColor] = useState("Blue");
+  const [selectedColor, setselectedColor] = useState("");
+  const [selectedColordiv, setselectedColordiv] = useState("");
+  const [selectedColorImg, setselectedColorImg] = useState("");
+
   const [selectedSize, setselectedSize] = useState("");
   const [qt, setqt] = useState(1);
 
@@ -49,70 +52,90 @@ export default function AddToCartModal({
 
   const handleAddToCart = (e) => {
     e.preventDefault();
-    let cart = [];
+    if (selectedColorImg.length !== 0) {
+      let cart = [];
 
-    if (typeof window !== "undefined") {
-      //Get cart from loclal
-      if (localStorage.getItem("cart")) {
-        cart = JSON.parse(localStorage.getItem("cart"));
-      }
-      if (cart.length !== 0) {
-        let mawjoud = false;
-        cart.map((x, i) => {
-          if (
-            x._id === p._id &&
-            x.color === selectedColor &&
-            x.size === selectedSize
-          ) {
-            mawjoud = true;
-            cart[i].count += qt;
-            return;
-          }
-        });
-        {
-          mawjoud === false &&
-            cart.push({
-              _id: p._id,
-              title: p.title,
-              price: p.price,
-              images: p.images,
-              color: selectedColor,
-              size: selectedSize,
-              count: qt,
-              slug: p.slug,
-            });
+      if (typeof window !== "undefined") {
+        //Get cart from loclal
+        if (localStorage.getItem("cart")) {
+          cart = JSON.parse(localStorage.getItem("cart"));
         }
-      } else {
-        cart.push({
-          _id: p._id,
-          title: p.title,
-          price: p.price,
-          images: p.images,
-          color: selectedColor,
-          size: selectedSize,
-          count: qt,
-          slug: p.slug,
-        });
-      }
-      //remove duplicate
-      let unique = _.uniqWith(cart, _.isEqual);
-      //save to local storage
-      localStorage.setItem("cart", JSON.stringify(unique));
-      //Add to redux state
+        if (cart.length !== 0) {
+          let mawjoud = false;
+          cart.map((x, i) => {
+            if (
+              x._id === p._id &&
+              x.color === selectedColor &&
+              x.size === selectedSize
+            ) {
+              mawjoud = true;
+              cart[i].count += qt;
+              return;
+            }
+          });
+          {
+            mawjoud === false &&
+              cart.push({
+                _id: p._id,
+                title: p.title,
+                price: p.price,
+                images: p.images,
+                color: selectedColor,
+                size: selectedSize,
+                count: qt,
+                slug: p.slug,
+                selectedcolorimg: selectedColorImg,
+                id: new Date().getTime(),
+              });
+          }
+        } else {
+          cart.push({
+            _id: p._id,
+            title: p.title,
+            price: p.price,
+            images: p.images,
+            color: selectedColor,
+            size: selectedSize,
+            count: qt,
+            slug: p.slug,
+            selectedcolorimg: selectedColorImg,
+            id: new Date().getTime(),
+          });
+        }
+        //remove duplicate
+        let unique = _.uniqWith(cart, _.isEqual);
+        //save to local storage
+        localStorage.setItem("cart", JSON.stringify(unique));
+        //Add to redux state
 
-      dispatch({
-        type: "ADD_TO_CART",
-        payload: unique,
-      });
-      toast.success("Product Added To Cart !");
-      setqt(1);
-      setselectedSize("");
+        dispatch({
+          type: "ADD_TO_CART",
+          payload: unique,
+        });
+        toast.success("Product Added To Cart !");
+        setqt(1);
+        setselectedSize("");
+      }
+    } else {
+      toast.error("Please Select Color !");
+      return;
     }
   };
   const { images, size, colors } = p;
   const handleSizeChange = (e) => {
     setselectedSize(e.target.value);
   };
+
+  const handleColorSelect = (ig, i) => {
+    const { name } = ig;
+    // console.log(name.split("_")[1].split(".")[0]);
+    setselectedColorImg(ig.url);
+    setselectedColor(name.split("_")[1].split(".")[0]);
+    setselectedColordiv(i);
+    console.log(selectedColordiv);
+    // setselectedColordiv(i);
+  };
+
   return (
     <div>
       <Modal
@@ -144,7 +167,13 @@ export default function AddToCartModal({
               <div className={styles.addtocartcontent}>
                 <div className={styles.imggcontainer}>
                   {" "}
-                  <img src={images && images[0].url} />
+                  <img
+                    src={
+                      images && selectedColorImg.length !== 0
+                        ? selectedColorImg
+                        : images[0]?.url
+                    }
+                  />
                 </div>
                 <div className={styles.pricecontainer}>
                   <span
@@ -181,7 +210,14 @@ export default function AddToCartModal({
                     {images &&
                       images.length > 1 &&
                       images.map((ig, i) => (
-                        <div className={styles.color} key={i}>
+                        <div
+                          onClick={() => handleColorSelect(ig, i)}
+                          className={styles.color}
+                          key={i}
+                          id={
+                            i == parseInt(selectedColordiv) ? styles.active : ""
+                          }
+                        >
                           <img src={ig.url}></img>
                         </div>
                       ))}
@@ -205,7 +241,7 @@ export default function AddToCartModal({
                       className={style.filtersize}
                       onChange={(e) => handleSizeChange(e)}
                     >
-                      <option className={style.filtersizeoption}>
+                      <option value={""} className={style.filtersizeoption}>
                         Select a size
                       </option>
                       {size &&

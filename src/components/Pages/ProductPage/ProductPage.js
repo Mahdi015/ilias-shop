@@ -7,11 +7,22 @@ import { getAllProducts, getProduct } from "../../../functions/products";
 import Carousel from "react-gallery-carousel";
 import "react-gallery-carousel/dist/index.css";
 import ProductCarousel from "./ProductCarousel";
-
+import { BsCartPlus } from "react-icons/bs";
+import { AiOutlineHeart } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
+import _ from "lodash";
 const Product = () => {
   const [value, setvalue] = useState("");
   const [product, setproduct] = useState("");
   const [products, setproducts] = useState([]);
+  const [selectedColor, setselectedColor] = useState("");
+  const [selectedSize, setselectedSize] = useState("");
+  const [imgcolorselected, setimgcolorselected] = useState("");
+
+  const [qt, setqt] = useState(1);
+  const [selectedColordiv, setselectedColordiv] = useState("");
+  const dispatch = useDispatch();
 
   const ratingChanged = (newRating) => {
     setvalue(newRating);
@@ -35,12 +46,103 @@ const Product = () => {
     }
     fetchAllProducts();
   }, [slug]);
+  useEffect(() => {
+    if (selectedColor.length !== 0) {
+      images.map((i) => {
+        if (i.name.includes(selectedColor)) {
+          setimgcolorselected(i.url);
+        }
+      });
+    }
+  }, [selectedColor]);
   const allImage =
     images &&
     images.length !== 0 &&
     images.map((i) => ({
       src: i.url,
     }));
+  const handleSizeChange = (e) => {
+    setselectedSize(e.target.value);
+  };
+  const handleColorSlect = (c, i) => {
+    setselectedColor(c);
+    setselectedColordiv(i);
+    console.log(selectedColordiv);
+    console.log(i);
+  };
+
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    if (selectedColor.length !== 0) {
+      let cart = [];
+
+      if (typeof window !== "undefined") {
+        //Get cart from loclal
+        if (localStorage.getItem("cart")) {
+          cart = JSON.parse(localStorage.getItem("cart"));
+        }
+        if (cart.length !== 0) {
+          let mawjoud = false;
+          cart.map((x, i) => {
+            if (
+              x._id === product._id &&
+              x.color === selectedColor &&
+              x.size === selectedSize
+            ) {
+              mawjoud = true;
+              cart[i].count += qt;
+              return;
+            }
+          });
+          {
+            mawjoud === false &&
+              cart.push({
+                _id: product._id,
+                title: product.title,
+                price: product.price,
+                images: product.images,
+                color: selectedColor,
+                size: selectedSize,
+                count: qt,
+                slug: product.slug,
+                selectedcolorimg: imgcolorselected,
+                id: new Date().getTime(),
+              });
+          }
+        } else {
+          cart.push({
+            _id: product._id,
+            title: product.title,
+            price: product.price,
+            images: product.images,
+            color: selectedColor,
+            size: selectedSize,
+            count: qt,
+            slug: product.slug,
+            selectedcolorimg: imgcolorselected,
+            id: new Date().getTime(),
+          });
+        }
+        //remove duplicate
+        let unique = _.uniqWith(cart, _.isEqual);
+        //save to local storage
+        localStorage.setItem("cart", JSON.stringify(unique));
+        //Add to redux state
+
+        dispatch({
+          type: "ADD_TO_CART",
+          payload: unique,
+        });
+        toast.success("Product Added To Cart !");
+        setqt(1);
+        setselectedSize("");
+        setselectedColordiv("");
+      }
+    } else {
+      toast.error("Please Select Color !");
+      return;
+    }
+  };
   return (
     <div className={style.container}>
       <div className={style.wrapper}>
@@ -57,8 +159,8 @@ const Product = () => {
                 marginLeft: "50px",
               }}
               objectFit="contain"
-              thumbnailWidth="11%"
-              thumbnailHeight="11%"
+              thumbnailWidth="80px"
+              thumbnailHeight="80px"
               hasThumbnailsAtMax={true}
               isAutoPlaying={true}
               canAutoPlay
@@ -95,7 +197,7 @@ const Product = () => {
               color: "#c96",
               lineHeight: "1.25",
               fontWeight: "400",
-              fontSize: "1.9rem",
+              fontSize: "1.5rem",
             }}
           >
             {price} TND
@@ -105,49 +207,94 @@ const Product = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
+          <form onSubmit={handleAddToCart}>
+            <div className={style.filtercontainer}>
+              <div className={style.filter}>
+                <h1 style={{ margin: 0 }}>Color:</h1>
 
-          <div className={style.filtercontainer}>
-            <div className={style.filter}>
-              <h1>Color:</h1>
-
-              {colors &&
-                colors.length !== 0 &&
-                colors.map((c) => (
-                  <div
-                    className={style.filtercolor}
-                    style={{ backgroundColor: `${c}` }}
-                  ></div>
-                ))}
-            </div>
-            <div className={style.filter}>
-              <h1>Size:</h1>
-              <select className={style.filtersize}>
-                <option defaultChecked className={style.filtersizeoption}>
-                  Select size
-                </option>
-
-                {size &&
-                  size.length !== 0 &&
-                  size.map((s) => (
-                    <option value={s} className={style.filtersizeoption}>
-                      {s}
-                    </option>
+                {colors &&
+                  colors.length !== 0 &&
+                  colors.map((c, i) => (
+                    <div
+                      key={i}
+                      className={style.filtercolor}
+                      style={{ backgroundColor: `${c}` }}
+                      onClick={() => handleColorSlect(c, i)}
+                      id={i == parseInt(selectedColordiv) ? style.active : ""}
+                    ></div>
                   ))}
-              </select>
-            </div>
+              </div>
+              <div className={style.filter}>
+                <h1 style={{ margin: 0 }}>Size:</h1>
+                <select
+                  onChange={(e) => handleSizeChange(e)}
+                  required
+                  value={selectedSize}
+                  className={style.filtersize}
+                >
+                  <option value="" defaultChecked>
+                    Select size
+                  </option>
 
-            <div className={style.filter}>
-              <h1>Qty:</h1>
-              <div className={style.amountcontainer}>
-                <GrFormSubtract style={{ cursor: "pointer" }} />
-                <span style={{ fontSize: "18px", fontWeight: "500" }}>1</span>
-                <GrFormAdd style={{ cursor: "pointer" }} />
+                  {size &&
+                    size.length !== 0 &&
+                    size.map((s) => <option value={s}>{s}</option>)}
+                </select>
+              </div>
+
+              <div className={style.filter}>
+                <h1 className={style.noselect} style={{ margin: 0 }}>
+                  Qty:
+                </h1>
+                <div className={style.amountcontainer}>
+                  <GrFormSubtract
+                    onClick={() => setqt(qt - 1)}
+                    style={{ cursor: "pointer" }}
+                  />
+                  <span
+                    className={style.noselect}
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "400",
+                      color: "#333",
+                    }}
+                  >
+                    {qt}
+                  </span>
+                  <GrFormAdd
+                    onClick={() => setqt(qt + 1)}
+                    style={{ cursor: "pointer" }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-          <div className={style.addcontainer}>
-            <button>ADD TO CARD</button>
-          </div>
+            <div className={style.addcontainer}>
+              <button type="submit">
+                <BsCartPlus />
+                <span
+                  className={style.noselect}
+                  style={{
+                    display: "block",
+                    marginTop: "0.2rem",
+                    marginLeft: "0.3rem",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  ADD TO CARD
+                </span>
+              </button>
+              <span className={`${style.wishlistspan} ${style.noselect}`}>
+                <AiOutlineHeart
+                  style={{
+                    color: "#c96",
+                    marginRight: ".5rem",
+                  }}
+                  size={"1.2em"}
+                />{" "}
+                Add to wishlist
+              </span>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -155,7 +302,7 @@ const Product = () => {
         <div className={style.textcontainer}>
           <div className={style.spancontainer}>
             <span>You May Also Like</span>
-            <div className={style.sm_border} style={{ left: "85px" }}></div>
+            <div className={style.sm_border}></div>
           </div>
         </div>
         <ProductCarousel products={products} />
