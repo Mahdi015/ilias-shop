@@ -11,9 +11,12 @@ import _ from "lodash";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { MdAddShoppingCart } from "react-icons/md";
+import ProductAddedToCart from "../Modal/ProductAddedToCart";
 
 const Product = ({ p, i }) => {
   const [AddToCartModalOpen, setAddToCartModalOpen] = useState(false);
+  const [ProductAddedToCartModal, setProductAddedToCartModal] = useState(false);
+
   const navigate = useNavigate();
   const { images } = p;
   const dispatch = useDispatch();
@@ -74,8 +77,14 @@ const Product = ({ p, i }) => {
       <AddToCartModal
         AddToCartModalOpen={AddToCartModalOpen}
         setAddToCartModalOpen={setAddToCartModalOpen}
+        setProductAddedToCartModal={setProductAddedToCartModal}
         p={p}
       />
+      <ProductAddedToCart
+        ProductAddedToCartModal={ProductAddedToCartModal}
+        setProductAddedToCartModal={setProductAddedToCartModal}
+      />
+
       <div key={i} className={style.container}>
         <img
           unselectable="on"

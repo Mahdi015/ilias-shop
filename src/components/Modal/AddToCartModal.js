@@ -33,6 +33,7 @@ export default function AddToCartModal({
   AddToCartModalOpen,
   setAddToCartModalOpen,
   p,
+  setProductAddedToCartModal,
 }) {
   const dispatch = useDispatch();
 
@@ -115,6 +116,8 @@ export default function AddToCartModal({
         toast.success("Product Added To Cart !");
         setqt(1);
         setselectedSize("");
+        setAddToCartModalOpen(false);
+        setProductAddedToCartModal(true);
       }
     } else {
       toast.error("Please Select Color !");

@@ -8,7 +8,7 @@
   margin-bottom: 4rem;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
-  scroll-snap-type: x mandatory;
+
 
 }
 
@@ -42,7 +42,7 @@
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
-  scroll-snap-type: x mandatory;
+  
 }
 .slide {
   display: flex;
@@ -50,7 +50,7 @@
   width: 100vw;
   height: 78vh;
   transition: all 0.4s ease-in-out;
-  scroll-snap-align: start;
+  
 }
 .imgContainer {
   flex: 1;
