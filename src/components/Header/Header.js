@@ -67,7 +67,7 @@ const Header = () => {
       <div className={styles.srachcontainer}>
         <span>
           <BsSearch />
-          <input placeholder="Search product..." type="search" />
+          <input placeholder="recherce..." type="search" />
         </span>
       </div>
 
@@ -96,7 +96,7 @@ const Header = () => {
                 whiteSpace: "nowrap",
               }}
             >
-              My Wishlist
+              Favoris
             </span>
           </div>
         </a>
@@ -219,13 +219,13 @@ const Header = () => {
                                 onClick={() => handlebuttonClick("cart")}
                                 className={styles.viewcartbutton}
                               >
-                                View Cart
+                                Voir Panier
                               </button>
                               <button
                                 onClick={() => handlebuttonClick("checkout")}
                                 className={styles.checkoutbutton}
                               >
-                                Checkout
+                                Commander
                               </button>
                             </div>
                           </>

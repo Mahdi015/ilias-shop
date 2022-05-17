@@ -12,7 +12,7 @@ const Announcement = () => {
         {" "}
         <BiPhoneCall /> Call: +0123 456 789{" "}
       </span>
-      <span> Ilias Shop Children's Clothing Store / Tunisia-Sfax</span>
+      <span> Ilias Shop Vente en ligne de vêtements Enfant / Tunisia-Sfax</span>
     </div>
   );
 };

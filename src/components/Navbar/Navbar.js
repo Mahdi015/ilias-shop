@@ -52,10 +52,10 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
               window.location.pathname == "/shopcollection" ? styles.active : ""
             }
           >
-            Shop Collection
+            NOUVEAUTÉS
           </a>
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
+          <a href="#">garçon</a>
+          <a href="#">Fille</a>
         </div>
         <div className={styles.navbarbuttons}>
           {user && user.length != 0 ? (
@@ -88,14 +88,14 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
                 onClick={() => handleLoginOpen()}
               >
                 {" "}
-                <span>Login</span>
+                <span style={{ whiteSpace: "nowrap" }}>SE CONNECTEZ</span>
               </a>
               <a
                 id={window.location.pathname == "/a" ? styles.active : ""}
                 onClick={() => handleOpen()}
               >
                 {" "}
-                <span>Register</span>
+                <span style={{ whiteSpace: "nowrap" }}>INSCRIVEZ</span>
               </a>
             </>
           )}

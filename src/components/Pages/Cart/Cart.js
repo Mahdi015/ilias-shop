@@ -60,18 +60,18 @@ const Cart = () => {
                 paddingBottom: "0.7rem",
               }}
             >
-              Order summary
+              SAC DE COURSES
             </h3>
 
             <div className={style.orderitem}>
-              <h3 style={{ fontWeight: "400" }}>SubTotal</h3>
+              <h3 style={{ fontWeight: "400" }}>Sous-total</h3>
               <h3 style={{ fontWeight: "400" }}>
                 {" "}
                 {cartTotal && `${cartTotal} TND`}
               </h3>
             </div>
             <div className={style.orderitem}>
-              <h3> Sipping Cost</h3>
+              <h3>Expédition</h3>
               <h3> 7 TND</h3>
             </div>
             <div className={style.orderitem}>
@@ -89,10 +89,12 @@ const Cart = () => {
               onClick={() => navigate("/checkout")}
               className={style.checkoutbtn}
             >
-              Chekout
+              Commander
             </button>
 
-            <button className={style.continushopbtn}>Continue Shopping</button>
+            <button className={style.continushopbtn}>
+              Continuer vos achats
+            </button>
           </div>
         </div>
       ) : (

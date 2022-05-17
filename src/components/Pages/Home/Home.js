@@ -218,7 +218,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
           </>
         )}
       </div>
-      <MessengerCustomerChat pageId="256707057867239" appId="173038394999956" />
+      <MessengerCustomerChat pageId="102803091812112" appId="173038394999956" />
     </div>
   );
 };

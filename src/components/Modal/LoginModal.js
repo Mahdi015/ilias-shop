@@ -77,7 +77,7 @@ export default function LoginModal({ LoginOpen, setLoginOpen }) {
               />
             </div>
             <div className={styles.registercontainer}>
-              <span>Login</span>
+              <span>Conexion</span>
               <div className={styles.sm_border}></div>
               <form
                 onSubmit={handleSubmit}
@@ -96,7 +96,7 @@ export default function LoginModal({ LoginOpen, setLoginOpen }) {
                     marginBottom: "0.5rem",
                   }}
                 >
-                  Phone Number
+                  Téléphone
                 </span>
                 {/* <span style={{ color: "#FF4A57", fontSize: "12px" }}>
             {formErrors.name}
@@ -126,7 +126,7 @@ export default function LoginModal({ LoginOpen, setLoginOpen }) {
                     marginBottom: "0.5rem",
                   }}
                 >
-                  Password *
+                  Mot de passe *
                 </span>
                 {/* <span style={{ color: "#FF4A57", fontSize: "12px" }}>
             {formErrors.name}
@@ -140,7 +140,7 @@ export default function LoginModal({ LoginOpen, setLoginOpen }) {
                   required
                 />
                 <div className={styles.loginui}>
-                  <button type="submit">LOG IN</button>
+                  <button type="submit">Identification</button>
                   <FormControlLabel
                     sx={{ fontSize: "10px" }}
                     control={
@@ -149,7 +149,7 @@ export default function LoginModal({ LoginOpen, setLoginOpen }) {
                     label="Remember Me"
                   />
 
-                  <a href="#">Forgot Your Password ?</a>
+                  <a href="#">Mot de passe oublié ?</a>
                 </div>
               </form>
             </div>

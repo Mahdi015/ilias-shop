@@ -82,13 +82,15 @@ const Checkout = () => {
         <div className={style.leftcontainer}>
           <div className={style.logindiv}>
             <span style={{ marginRight: "3px" }}>
-              Login to save your infos{" "}
+              Connectez-vous pour enregistrer vos informations{" "}
             </span>
             <a href="#" style={{ marginRight: "3px" }}>
               {" "}
               Login{" "}
             </a>
-            <span style={{ marginRight: "3px" }}>Don't have account ? </span>
+            <span style={{ marginRight: "3px" }}>
+              vous n'avez pas de compte ?{" "}
+            </span>
             <a href="#" style={{ marginRight: "3px" }}>
               {" "}
               Register
@@ -96,10 +98,10 @@ const Checkout = () => {
           </div>
           <div className={style.formcontainer}>
             <form id="myform" onSubmit={(e) => handleCheckOut(e)}>
-              <h2>Instant Order</h2>
+              <h2>Commande instantanée</h2>
               <div className={style.formrow}>
                 <div className={style.inputgroup}>
-                  <label>First Name *</label>
+                  <label>Prénom *</label>
                   <input
                     type="text"
                     required
@@ -109,7 +111,7 @@ const Checkout = () => {
                   />
                 </div>
                 <div className={style.inputgroup}>
-                  <label>Last Name *</label>
+                  <label>Nom *</label>
                   <input
                     type="text"
                     required
@@ -124,7 +126,9 @@ const Checkout = () => {
                   style={{ alignItems: "start" }}
                   className={style.inputgroup}
                 >
-                  <label style={{ marginTop: "1rem" }}>Street address *</label>
+                  <label style={{ marginTop: "1rem" }}>
+                    Numéro et nom de rue *
+                  </label>
                   <div className={style.streetadrdiv}>
                     <input
                       type="text"
@@ -139,7 +143,7 @@ const Checkout = () => {
               </div>
               <div className={style.formrow}>
                 <div className={style.inputgroup}>
-                  <label>Town / City *</label>
+                  <label>Ville *</label>
                   <input
                     type="text"
                     required
@@ -149,13 +153,13 @@ const Checkout = () => {
                   />
                 </div>
                 <div className={style.inputgroup}>
-                  <label>State / County</label>
+                  <label>Pays/région *</label>
                   <input type="text" defaultValue="Tunisia" readOnly />
                 </div>
               </div>
               <div className={style.formrow}>
                 <div className={style.inputgroup}>
-                  <label>Postcode / ZIP *</label>
+                  <label>Code postal *</label>
                   <input
                     type="text"
                     required
@@ -165,7 +169,7 @@ const Checkout = () => {
                   />
                 </div>
                 <div className={style.inputgroup}>
-                  <label>Phone *</label>
+                  <label>Téléphone *</label>
                   <input
                     type="text"
                     required
@@ -176,7 +180,7 @@ const Checkout = () => {
                 </div>
               </div>
               <div className={style.inputgroup}>
-                <label>Order notes (optional)</label>
+                <label>Autre Remarques</label>
                 <textarea
                   required
                   cols="30"
@@ -196,7 +200,7 @@ const Checkout = () => {
         className={style.rightcontainer}
       >
         {" "}
-        <h3>Your Order</h3>
+        <h3>Votre commande</h3>
         <table style={{ borderCollapse: "collapse" }}>
           <thead>
             <tr>
@@ -217,11 +221,11 @@ const Checkout = () => {
               ))}
 
             <tr style={{ color: "#333" }}>
-              <td>Subtotal: </td>
+              <td>Sous-total: </td>
               <td style={{ textAlign: "end" }}>{cartTotal} TND</td>
             </tr>
             <tr style={{ color: "#666" }}>
-              <td>Shipping</td>
+              <td>Expédition</td>
               <td style={{ textAlign: "end" }}>7 TND</td>
             </tr>
             <tr
@@ -243,7 +247,7 @@ const Checkout = () => {
             <button onClick={(e) => handleCheckOut(e)}>Place Order</button>
           ) : (
             <button form="myform" type="submit">
-              Place Order
+              Commander
             </button>
           )}
         </div>
