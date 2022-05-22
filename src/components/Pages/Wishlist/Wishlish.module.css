@@ -1,0 +1,44 @@
+.header{
+    width: 100%;
+    height: 70px;
+    background-color: #EEEEEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nexarrivals {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 100px;
+    transition: all 0.4s ease-in-out;
+  }
+  .pcontainer{
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 25%;
+    justify-content: center;
+  
+  }
+
+  @media screen and (max-width: 1391px) {
+    .nexarrivals {
+      margin: 0 60px;
+    }
+  }
+   
+  
+  
+  @media screen and (max-width: 1080px) {
+    .nexarrivals {
+      margin: 0 20px;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    .pcontainer {
+      flex-basis: 35%;
+    }
+  }

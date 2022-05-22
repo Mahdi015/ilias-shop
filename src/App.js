@@ -21,6 +21,7 @@ import {
   MobileMenuTab,
   OrderConfirmation,
   ListOrders,
+  Wishlist,
 } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
@@ -104,6 +105,7 @@ function App() {
               path="/orderconfirmation/:slug"
               element={<OrderConfirmation />}
             />
+            <Route path="/wishlist" element={<Wishlist />} />
             <Route
               path="/admindashboard/addproducts"
               element={<AdminRoutes adminVar={adminVar} />}

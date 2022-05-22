@@ -19,6 +19,8 @@ const Header = () => {
 
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => ({ ...state }));
+  const { wishlist } = useSelector((state) => ({ ...state }));
+
   const navigate = useNavigate();
   useEffect(() => {
     let total = 0;
@@ -78,28 +80,41 @@ const Header = () => {
       </div>
 
       <div className={styles.infocontainer}>
-        <a href="#">
-          <div
-            style={{
-              alignItems: "center",
-              display: "flex",
-              marginRight: "0.8rem",
-            }}
-          >
-            <AiOutlineHeart size={"1.4em"} />
-
-            <span
+        <Badge
+          badgeContent={wishlist ? wishlist.length : "0"}
+          color="warning"
+          sx={{
+            "& .MuiBadge-badge": { fontSize: 11, height: 18 },
+            p: 0,
+            ["@media (max-width:780px)"]: {
+              p: 0,
+            },
+          }}
+        >
+          <a href="/wishlist" style={{ paddingRight: "0" }}>
+            <div
               style={{
-                marginLeft: "0.5rem",
-                fontSize: "13px",
-                lineHeight: "13px",
-                whiteSpace: "nowrap",
+                alignItems: "center",
+                display: "flex",
+                marginRight: "0.8rem",
               }}
             >
-              Favoris
-            </span>
-          </div>
-        </a>
+              <AiOutlineHeart size={"1.4em"} />
+
+              <span
+                style={{
+                  marginLeft: "0.5rem",
+                  fontSize: "13px",
+                  lineHeight: "13px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Favoris
+              </span>
+            </div>
+          </a>
+        </Badge>
+
         <div className={styles.cartdropdowndiv}>
           <Badge
             badgeContent={cartLength ? cartLength : "0"}

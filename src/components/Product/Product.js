@@ -12,11 +12,12 @@ import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import { MdAddShoppingCart } from "react-icons/md";
 import ProductAddedToCart from "../Modal/ProductAddedToCart";
+import Tooltip from "@mui/material/Tooltip";
 
 const Product = ({ p, i }) => {
   const [AddToCartModalOpen, setAddToCartModalOpen] = useState(false);
   const [ProductAddedToCartModal, setProductAddedToCartModal] = useState(false);
-
+  const [tool, settool] = useState("");
   const navigate = useNavigate();
   const { images } = p;
   const dispatch = useDispatch();
@@ -63,13 +64,41 @@ const Product = ({ p, i }) => {
       let unique = _.uniqWith(cart, _.isEqual);
       //save to local storage
       localStorage.setItem("cart", JSON.stringify(unique));
+
       //Add to redux state
 
       dispatch({
         type: "ADD_TO_CART",
         payload: unique,
       });
-      toast.success("Product Added To Cart !");
+      toast.success("Produit Ajouté à La Cart !");
+    }
+  };
+
+  const handleAddtToWishlist = () => {
+    let wishlistbag = [];
+    if (typeof window !== "undefined") {
+      //Get cart from loclal
+      if (localStorage.getItem("wishlist")) {
+        wishlistbag = JSON.parse(localStorage.getItem("wishlist"));
+      }
+      //Add new cart
+      wishlistbag.push({
+        ...p,
+      });
+      //remove duplicate
+      let unique = _.uniqWith(wishlistbag, _.isEqual);
+      //save to local storage
+      localStorage.setItem("wishlist", JSON.stringify(unique));
+
+      //Add to redux state
+
+      dispatch({
+        type: "ADD_TO_WISHLIST",
+        payload: unique,
+      });
+      settool("Ajoutée");
+      toast.success("Produit Ajouté à La Wishlist !");
     }
   };
   return (
@@ -93,14 +122,25 @@ const Product = ({ p, i }) => {
           src={images && images[0].url}
         />
         <div style={{ top: "50px" }} className={style.icon}>
-          <AiOutlineShoppingCart onClick={() => handleAddToCart()} />
+          <AiOutlineShoppingCart onClick={() => setAddToCartModalOpen(true)} />
         </div>
         <div style={{ top: "100px" }} className={style.icon}>
           <AiOutlineEye onClick={() => navigate(`/p/${p.slug}`)} />
         </div>
         <div className={style.icon}>
           {" "}
-          <AiOutlineHeart />
+          <Tooltip title={tool}>
+            <span
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {" "}
+              <AiOutlineHeart onClick={() => handleAddtToWishlist()} />
+            </span>
+          </Tooltip>
         </div>
         <div className={style.info}>
           <div className={style.button}>

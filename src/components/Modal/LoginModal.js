@@ -27,6 +27,9 @@ const style = {
     height: "100%",
     width: "100%",
     padding: "32px 20px 32px 20px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 };
 
@@ -69,16 +72,26 @@ export default function LoginModal({ LoginOpen, setLoginOpen }) {
       >
         <Fade in={LoginOpen}>
           <Box sx={style}>
-            <div className={styles.close}>
+            <div className={styles.closelogin}>
               <AiFillCloseCircle
                 style={{ cursor: "pointer" }}
                 onClick={() => handleClose()}
                 size={"1.3em"}
               />
             </div>
-            <div className={styles.registercontainer}>
-              <span>Conexion</span>
-              <div className={styles.sm_border}></div>
+            <div className={styles.logincontainer}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  width: "100%",
+                }}
+              >
+                <span>Conexion</span>
+                <div className={styles.sm_border}></div>
+              </div>
+
               <form
                 onSubmit={handleSubmit}
                 style={{
@@ -140,16 +153,20 @@ export default function LoginModal({ LoginOpen, setLoginOpen }) {
                   required
                 />
                 <div className={styles.loginui}>
-                  <button type="submit">Identification</button>
-                  <FormControlLabel
-                    sx={{ fontSize: "10px" }}
-                    control={
-                      <Checkbox sx={{ fontSize: "10px" }} color="default" />
-                    }
-                    label="Remember Me"
-                  />
+                  <div className={styles.btndiv}>
+                    <button type="submit">Identification</button>
+                  </div>
+                  <div className={styles.otherdiv}>
+                    <FormControlLabel
+                      sx={{ fontSize: "10px" }}
+                      control={
+                        <Checkbox sx={{ fontSize: "10px" }} color="default" />
+                      }
+                      label="Remember Me"
+                    />
 
-                  <a href="#">Mot de passe oublié ?</a>
+                    <a href="#">Mot de passe oublié ?</a>
+                  </div>
                 </div>
               </form>
             </div>

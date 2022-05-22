@@ -21,3 +21,4 @@ export { default as MobileMenuTab } from "./MobileMenu/MobileMenuTab";
 export { default as OrderConfirmation } from "./Pages/Checkout/OrderConfirmation";
 export { default as ListOrders } from "./Pages/Admin/AdminPages/ListOrders";
 export { default as ProductAddedToCart } from "./Modal/ProductAddedToCart";
+export { default as Wishlist } from "./Pages/Wishlist/Wishlist";

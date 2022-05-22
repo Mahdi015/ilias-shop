@@ -10,21 +10,27 @@ const responsive = {
     items: 4,
     // slidesToSlide: 3, // optional, default to 1.
   },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
+  customBreakpoint: {
+    breakpoint: { max: 1288, min: 1065 },
     items: 3,
     // slidesToSlide: 2, // optional, default to 1.
   },
-  mobile: {
-    breakpoint: { max: 464, min: 386 },
+  tablet: {
+    breakpoint: { max: 1065, min: 648 },
     items: 2,
+    // slidesToSlide: 2, // optional, default to 1.
+  },
+
+  mobile: {
+    breakpoint: { max: 648, min: 0 },
+    items: 1,
     // slidesToSlide: 1, // optional, default to 1.
   },
-  mobilesmaller: {
-    breakpoint: { max: 386, min: 0 },
-    items: 1,
-    slidesToSlide: 1, // optional, default to 1.
-  },
+  // mobilesmaller: {
+  //   breakpoint: { max: 386, min: 0 },
+  //   items: 1,
+  //   slidesToSlide: 1, // optional, default to 1.
+  // },
 };
 
 const ProductCarousel = ({ products }) => {
@@ -43,7 +49,7 @@ const ProductCarousel = ({ products }) => {
         customTransition="transform 500ms ease-in-out"
         transitionDuration={500}
         containerClass="carousel-container"
-        removeArrowOnDeviceType={["mobilesmaller", "mobile"]}
+        removeArrowOnDeviceType={["mobilesmaller"]}
         //   deviceType={this.props.deviceType}
         // dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
