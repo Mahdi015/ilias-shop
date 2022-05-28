@@ -3,6 +3,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Product from "../../Product/Product";
 import style from "./ProductPage.module.css";
+import Skeleton from "@mui/material/Skeleton";
+import Stack from "@mui/material/Stack";
 
 const responsive = {
   desktop: {
@@ -54,17 +56,63 @@ const ProductCarousel = ({ products }) => {
         // dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-        {products && products.length !== 0 ? (
+        {products &&
+          products.length !== 0 &&
           products.map((p, i) => (
             <div className={style.pdiv}>
               {" "}
               <Product p={p} i={i} />
             </div>
-          ))
-        ) : (
-          <div>gdfg</div>
-        )}
+          ))}
       </Carousel>
+      {!products.length ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <Stack spacing={1}>
+            <Skeleton
+              variant="rectangular"
+              animation="wave"
+              width={250}
+              height={170}
+            />
+            <Skeleton height={60} variant="text" animation="wave" />
+          </Stack>
+          <Stack spacing={1}>
+            <Skeleton
+              variant="rectangular"
+              animation="wave"
+              width={250}
+              height={170}
+            />
+            <Skeleton height={60} variant="text" animation="wave" />
+          </Stack>
+          <Stack spacing={1}>
+            <Skeleton
+              variant="rectangular"
+              animation="wave"
+              width={250}
+              height={170}
+            />
+            <Skeleton height={60} variant="text" animation="wave" />
+          </Stack>
+          <Stack spacing={1}>
+            <Skeleton
+              variant="rectangular"
+              animation="wave"
+              width={250}
+              height={170}
+            />
+            <Skeleton height={60} variant="text" animation="wave" />
+          </Stack>
+        </div>
+      ) : (
+        ""
+      )}
     </>
   );
 };

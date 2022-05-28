@@ -19,6 +19,7 @@ export { default as ListProducts } from "./Pages/Admin/AdminPages/ListProducts";
 export { default as ListUsers } from "./Pages/Admin/AdminPages/ListUsers";
 export { default as MobileMenuTab } from "./MobileMenu/MobileMenuTab";
 export { default as OrderConfirmation } from "./Pages/Checkout/OrderConfirmation";
-export { default as ListOrders } from "./Pages/Admin/AdminPages/ListOrders";
+export { default as ListOrders } from "./Pages/Admin/AdminPages/Orders/ListOrders";
 export { default as ProductAddedToCart } from "./Modal/ProductAddedToCart";
 export { default as Wishlist } from "./Pages/Wishlist/Wishlist";
+export { default as SingelOrder } from "./Pages/Admin/AdminPages/Orders/SingelOrder";

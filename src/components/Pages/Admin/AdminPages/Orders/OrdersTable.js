@@ -8,10 +8,10 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { useState, useEffect } from "react";
-import { AiFillEdit, AiFillDelete } from "react-icons/ai";
-import style from "./ListProducts.module.css";
+import { AiFillEdit, AiFillDelete, AiFillEye } from "react-icons/ai";
+import style from "../ListProducts.module.css";
 import CircularProgress from "@mui/material/CircularProgress";
-
+import { useNavigate } from "react-router-dom";
 const columns = [
   { id: "orderid", label: "ID", maxWidth: 70 },
   { id: "customer", label: "Customer", maxWidth: 230 },
@@ -118,6 +118,18 @@ export default function OrdersTable({ orders }) {
             actions: (
               <div>
                 <span style={{ cursor: "pointer", color: "#303c5c" }}>
+                  <AiFillEye
+                    size={"1.3em"}
+                    onClick={() => navigate(`/admindashboard/order/${_id}`)}
+                  />
+                </span>
+                <span
+                  style={{
+                    cursor: "pointer",
+                    color: "#303c5c",
+                    marginLeft: "0.6rem",
+                  }}
+                >
                   <AiFillEdit size={"1.3em"} />
                 </span>
                 <span
@@ -141,7 +153,7 @@ export default function OrdersTable({ orders }) {
   };
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+  const navigate = useNavigate();
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -159,7 +171,15 @@ export default function OrdersTable({ orders }) {
             <input placeholder="Search Users" type="search" />
           </div>
           <Paper
-            sx={{ width: "98%", overflow: "hidden", marginRight: "0.5rem" }}
+            sx={{
+              width: "98%",
+              overflow: "hidden",
+              marginRight: "0.5rem",
+              borderRadius: "15px",
+              boxShadow: "0 0 10px 0 rgb(0 0 0 / 3%)",
+              WebkitBoxShadow: "0 0 10px 0 rgb(0 0 0 / 3%)",
+              border: "1px solid #f3f3f3",
+            }}
           >
             <TableContainer sx={{ maxHeight: 640 }}>
               <Table stickyHeader aria-label="sticky table">

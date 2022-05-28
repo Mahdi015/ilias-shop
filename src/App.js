@@ -22,6 +22,7 @@ import {
   OrderConfirmation,
   ListOrders,
   Wishlist,
+  SingelOrder,
 } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
@@ -134,6 +135,13 @@ function App() {
               <Route
                 path="/admindashboard/listorders"
                 element={<ListOrders />}
+              />
+            </Route>
+
+            <Route path="/admindashboard/order/:id" element={<AdminRoutes />}>
+              <Route
+                path="/admindashboard/order/:id"
+                element={<SingelOrder />}
               />
             </Route>
             <Route path="/*" element={<PageNotFound />} />

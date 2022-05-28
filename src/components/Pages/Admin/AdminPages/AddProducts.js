@@ -139,7 +139,15 @@ const AddProducts = () => {
 
       <div className={style.pagecontainer}>
         <div>
-          <h3>Add Product</h3>
+          <h3
+            style={{
+              fontSize: "1.5rem",
+              color: "#333",
+              fontWeight: "500",
+            }}
+          >
+            Add Product
+          </h3>
           <span style={{ color: "#636e75" }}>
             Add your product and necessary information from here
           </span>

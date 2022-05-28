@@ -12,6 +12,8 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import _ from "lodash";
+import Skeleton from "@mui/material/Skeleton";
+
 const Product = () => {
   const [value, setvalue] = useState("");
   const [product, setproduct] = useState("");
@@ -148,7 +150,7 @@ const Product = () => {
       <div className={style.wrapper}>
         <div className={style.imgcontainer}>
           {/* <img src={images && images[0].url} /> */}
-          {images && images.length !== 0 && (
+          {images && images.length !== 0 ? (
             <Carousel
               hasMediaButton={false}
               images={allImage}
@@ -166,11 +168,61 @@ const Product = () => {
               canAutoPlay
               autoPlayInterval={5000}
             />
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Skeleton
+                variant="rectangular"
+                animation="wave"
+                width="65%"
+                height="300px"
+              />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  width: "65%",
+                  marginTop: "1rem",
+                }}
+              >
+                <Skeleton
+                  variant="rectangular"
+                  animation="wave"
+                  width="70px"
+                  height="50px"
+                />
+                <Skeleton
+                  variant="rectangular"
+                  animation="wave"
+                  width="70px"
+                  height="50px"
+                />
+                <Skeleton
+                  variant="rectangular"
+                  animation="wave"
+                  width="70px"
+                  height="50px"
+                />
+                <Skeleton
+                  variant="rectangular"
+                  animation="wave"
+                  width="70px"
+                  height="50px"
+                />
+              </div>
+            </div>
           )}
         </div>
 
         <div className={style.infocontainer}>
-          <h1>{title}</h1>
+          {title ? <h1>{title}</h1> : <Skeleton width="200px" variant="text" />}
           <div className={style.reviewcontainer}>
             {" "}
             <ReactStars

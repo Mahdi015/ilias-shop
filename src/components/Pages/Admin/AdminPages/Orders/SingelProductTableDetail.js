@@ -9,36 +9,46 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { useState, useEffect } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
-import style from "./ListProducts.module.css";
+import style from "../ListProducts.module.css";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const columns = [
-  { id: "productname", label: "PRODUCT NAME", minWidth: 170 },
-  { id: "price", label: "PRICE", minWidth: 170, align: "center" },
+  { id: "productnumber", label: "#", maxWidth: 50 },
+  { id: "image", label: "IMAGE", maxWidth: 100, align: "left" },
   {
-    id: "stock",
-    label: "STOCK",
-    minWidth: 170,
+    id: "productname",
+    label: "PRODUCT",
+    maxWidth: 150,
     align: "center",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
-    id: "status",
-    label: "STATUS",
-    minWidth: 170,
+    id: "price",
+    label: "PRICE",
+    maxWidth: 150,
     align: "center",
-    format: (value) => value.toLocaleString("en-US"),
   },
   {
-    id: "actions",
-    label: "ACTIONS",
-    with: 100,
+    id: "quantity",
+    label: "Quantity",
+    maxWidth: 100,
     align: "right",
-    format: (value) => value.toFixed(2),
+  },
+  {
+    id: "size",
+    label: "Size",
+    maxWidth: 50,
+    align: "right",
+  },
+  {
+    id: "total",
+    label: "Total",
+    maxWidth: 100,
+    align: "right",
   },
 ];
 
-export default function ProductsTable({ products, handleDeleteProduct }) {
+export default function SingelProductTableDetail({ products, totalPrice }) {
   const [allData, setallData] = useState([]);
   useEffect(() => {
     {
@@ -52,56 +62,72 @@ export default function ProductsTable({ products, handleDeleteProduct }) {
       products &&
         products.length != 0 &&
         products.map((data, id) => {
-          let { title, quantity, price, images, _id } = data;
+          let { productName, count, price, imgWithColorChosed, size } = data;
           rows.push({
-            productname: (
+            productnumber: id,
+            image: (
               <div
                 style={{
+                  width: "50px",
+                  height: "50px",
+                  backgroundColor: "#F7F7F7",
+                  borderRadius: "15px",
                   display: "flex",
-                  justifyContent: "flex-start",
+                  justifyContent: "center",
                   alignItems: "center",
                 }}
               >
-                <span
-                  style={{
-                    width: "125px",
-                    color: "#666",
-                    fontWeight: "500",
-                    fontSize: ".9rem",
-                  }}
-                >
-                  {title}
-                </span>{" "}
                 <img
-                  style={{ width: "40px", height: "auto" }}
-                  src={images && images[0].url}
+                  style={{
+                    width: "100%",
+                    objectFit: "contain",
+                    height: "100%",
+                  }}
+                  src={imgWithColorChosed}
                 />
               </div>
             ),
-            price,
-            stock: quantity,
-            status: <span className={style.badgespan}>Published</span>,
-            actions: (
-              <div>
-                <span style={{ cursor: "pointer", color: "#303c5c" }}>
-                  <AiFillEdit size={"1.3em"} />
-                </span>
-                <span
-                  style={{
-                    cursor: "pointer",
-                    marginLeft: "0.6rem",
-                    color: "#bf243d",
-                  }}
-                >
-                  <AiFillDelete
-                    size={"1.3em"}
-                    onClick={() => handleDeleteProduct(_id)}
-                  />
-                </span>
-              </div>
+            productname: (
+              <span style={{ color: "#8a909d", fontSize: "15px" }}>
+                {productName}
+              </span>
+            ),
+            price: (
+              <span style={{ color: "#8a909d", fontSize: "15px" }}>
+                {price}TND
+              </span>
+            ),
+            quantity: (
+              <span style={{ color: "#8a909d", fontSize: "15px" }}>
+                {count}
+              </span>
+            ),
+            size,
+            total: (
+              <span style={{ color: "#8a909d", fontSize: "15px" }}>
+                {price * count}TND
+              </span>
             ),
           });
         });
+      rows.push(
+        {
+          size: (
+            <span style={{ color: "#333", fontSize: "16px" }}>
+              SHIPING COST
+            </span>
+          ),
+          total: <span style={{ color: "#333", fontSize: "16px" }}>7 TND</span>,
+        },
+        {
+          size: <span style={{ color: "#333", fontSize: "16px" }}>TOTAL</span>,
+          total: (
+            <span style={{ color: "#333", fontSize: "16px" }}>
+              {totalPrice} TND
+            </span>
+          ),
+        }
+      );
     }
     setallData(rows);
   };
@@ -121,14 +147,9 @@ export default function ProductsTable({ products, handleDeleteProduct }) {
     <>
       {allData && allData.length != 0 ? (
         <>
-          <div className={style.inputcontainer}>
-            <input placeholder="Search Product" type="search" />
-          </div>
           <Paper
             sx={{
-              width: "98%",
               overflow: "hidden",
-              marginRight: "0.5rem",
               borderRadius: "15px",
               boxShadow: "0 0 10px 0 rgb(0 0 0 / 3%)",
               WebkitBoxShadow: "0 0 10px 0 rgb(0 0 0 / 3%)",

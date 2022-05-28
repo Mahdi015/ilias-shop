@@ -1,6 +1,8 @@
 .pagecontainer{
     margin-left: 240px;
     padding: 94px 12px 60px 50px;
+    background-color: #F1F5F7;
+
 }
 .form{
     display: flex;
@@ -33,7 +35,7 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
   .formrow input:focus {
-    border-color: #c96;
+    border-color: #5664D2;
     background-color: white;
   }
   .button{

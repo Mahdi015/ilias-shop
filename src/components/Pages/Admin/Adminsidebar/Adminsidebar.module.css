@@ -71,10 +71,10 @@
 }
 .menuitem a{
     
-    padding: 1rem 1.1rem;
+    padding: 1rem;
     color: #74788d;
     position: relative;
-    font-size: 14.2px;
+    font-size: 15.3px;
     transition: all .4s;
     font-family: "Inter",sans-serif;
     font-weight: 500;
@@ -84,6 +84,7 @@
 }
 .menuitem a:hover{
     color: #d7e4ec;
+      border-left: 2px solid #d7e4ec;
 }
 .menuitemdropdown a{
     display: block;
@@ -108,5 +109,6 @@
 }
 #active{
     color: #d7e4ec;
+    border-left: 2px solid #d7e4ec;
 
 }

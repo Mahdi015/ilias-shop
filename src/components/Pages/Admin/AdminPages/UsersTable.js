@@ -122,7 +122,14 @@ export default function UsersTable({ users }) {
             <input placeholder="Search Users" type="search" />
           </div>
           <Paper
-            sx={{ width: "98%", overflow: "hidden", marginRight: "0.5rem" }}
+            sx={{
+              width: "98%",
+              overflow: "hidden",
+              marginRight: "0.5rem",
+              borderRadius: "15px",
+              boxShadow: "0 0 10px 0 rgb(0 0 0 / 3%)",
+              WebkitBoxShadow: "0 0 10px 0 rgb(0 0 0 / 3%)",
+            }}
           >
             <TableContainer sx={{ maxHeight: 640 }}>
               <Table stickyHeader aria-label="sticky table">

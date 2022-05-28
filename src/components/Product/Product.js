@@ -142,6 +142,9 @@ const Product = ({ p, i }) => {
             </span>
           </Tooltip>
         </div>
+        <div className={style.productname}>
+          <h4>{p.title}</h4>
+        </div>
         <div className={style.info}>
           <div className={style.button}>
             <button onClick={() => setAddToCartModalOpen(true)}>
