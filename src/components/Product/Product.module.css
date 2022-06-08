@@ -17,7 +17,7 @@
   flex-direction: column;
   transition: all 0.4s ease-in-out; 
   overflow: hidden;
-  border-radius: 15px; 
+
   -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 3%);
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 3%);
 
@@ -25,6 +25,8 @@
   /* box-shadow: 1px 1px 15px -2px rgb(0 0 0 / 10%);
   -moz-box-shadow: 1px 1px 15px -2px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 1px 1px 15px -2px rgb(0 0 0 / 10%); */
+
+
 }
 .imgcontainer {
   height: 70%;
@@ -40,6 +42,19 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   margin-top: .5rem;
+
+  -webkit-tap-highlight-color: transparent;
+
+
+}
+.imgcontainer::-moz-selection {
+  background-color: transparent;
+  color: #000;
+}
+
+.imgcontainer::selection {
+  background-color: transparent;
+  color: #000;
 }
 .productname{
   z-index: 1;
@@ -66,8 +81,8 @@
 }
 .icon {
   z-index: 999;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
@@ -96,7 +111,7 @@
 .container:hover .button button{
   transform: scaleY(1);
 }
-.container:hover .price{
+.container:hover .pinfo{
   visibility: hidden;
   opacity: 0;
 }
@@ -153,8 +168,63 @@
   padding: .2rem .5rem;
   border-radius: 28px;
 }
+.pinfo {
+  display: flex;
+  position:absolute;
+  /* margin-top: 1.5rem; */
+  z-index: 1;
+  bottom: 20px;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.35s ease;
+  -webkit-transition: all .35s ease; 
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.right{
+  display: flex;
+  margin-right: .6rem;
+}
+.left{
+  display: flex;
+  margin-left: .6rem;
+  align-items: center;
+}
+.coloroption {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 3px;
+  border: 1px solid gray;
+  cursor: pointer;
+  position: relative;
+}
+.sp{
+  content: "";
+  display: block;
+  height: 25px;
+  width: 2px;
+  background-color: #c96;
+}
+.sizeoption{
+  margin-left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+}
+.sizeoption span{
+font-weight: 500;
+color: #333;
+font-size: small;
 
+}
 @media screen and (max-width: 1300px) {
   .container {
     margin-bottom: 1.5rem;

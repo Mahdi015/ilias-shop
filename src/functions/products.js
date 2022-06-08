@@ -26,3 +26,19 @@ export const productDelete = async (id) =>
   await axios.delete(
     `${process.env.REACT_APP_API}/products/deleteProduct/${id}`
   );
+
+export const getProductByColor = async (color) =>
+  await axios.get(
+    `${process.env.REACT_APP_API}/products/getProductByColor/${color}`
+  );
+
+export const getProductByPrice = async (price) =>
+  await axios.post(`${process.env.REACT_APP_API}/products/getProductByPrice`, {
+    price,
+  });
+
+export const filterAll = async (color, price) =>
+  await axios.post(`${process.env.REACT_APP_API}/products/filterAll`, {
+    color,
+    price,
+  });

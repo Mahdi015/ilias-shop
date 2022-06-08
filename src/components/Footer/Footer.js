@@ -2,8 +2,9 @@ import React from "react";
 import style from "./Footer.module.css";
 import { FaFacebookF, FaTiktok } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
-
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate();
   if (window.location.href.includes("admin")) {
     return null;
   }
@@ -33,9 +34,9 @@ const Footer = () => {
           <div className={style.info}>
             <div className={style.leftinfo}>
               <ul>
-                <li>Home</li>
-                <li>Shop Collection</li>
-                <li>Contact</li>
+                <li onClick={() => navigate("/")}>Home</li>
+                <li onClick={() => navigate("/shopcollection")}>Nouveauté</li>
+                <li onClick={() => navigate("/contact-us")}>Contact</li>
               </ul>
             </div>
             <div className={style.centerinfo}>

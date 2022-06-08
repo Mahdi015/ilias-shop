@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import style from "./MobileMenu.module.css";
 import { AiOutlineClose, AiOutlineInstagram } from "react-icons/ai";
 import { FaFacebookF, FaTiktok } from "react-icons/fa";
 const MobileMenuTab = ({ mobileMenu, setmobileMenu }) => {
+  const menuArea = useRef(null);
+  const menuControl = (e) => {
+    if (menuArea.current && !menuArea.current.contains(e.target)) {
+      setmobileMenu(false);
+    }
+  };
+  document.addEventListener("mousedown", menuControl);
   return (
     <div
       style={mobileMenu ? { visibility: "visible" } : {}}
       className={style.mobilemenuwrapper}
+      ref={menuArea}
     >
       <span style={{ color: "white" }} className={style.closemobilemenu}>
         <AiOutlineClose onClick={() => setmobileMenu(false)} />
@@ -26,7 +34,7 @@ const MobileMenuTab = ({ mobileMenu, setmobileMenu }) => {
             <a href="/aboutus">About us</a>
           </li>
           <li>
-            <a href="/contactus">Contact Us</a>
+            <a href="/contact-us">Contact Us</a>
           </li>
         </ul>
 

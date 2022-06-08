@@ -23,6 +23,7 @@ import {
   ListOrders,
   Wishlist,
   SingelOrder,
+  Contact,
 } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
@@ -81,7 +82,7 @@ function App() {
         <div className="mobileoverlay"></div>
         <Router>
           <Announcement />
-          <Header />
+          {/* <Header /> */}
           <Navbar
             setOpen={setOpen}
             setLoginOpen={setLoginOpen}
@@ -107,6 +108,8 @@ function App() {
               element={<OrderConfirmation />}
             />
             <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/contact-us" element={<Contact />} />
+
             <Route
               path="/admindashboard/addproducts"
               element={<AdminRoutes adminVar={adminVar} />}
@@ -146,8 +149,8 @@ function App() {
             </Route>
             <Route path="/*" element={<PageNotFound />} />
           </Routes>
+          <Footer />
         </Router>
-        <Footer />
       </div>
       <MobileMenuTab setmobileMenu={setmobileMenu} mobileMenu={mobileMenu} />
     </div>

@@ -3,35 +3,37 @@
   width: 100%;
   z-index: 999;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #222222;
-  
 
+  align-items: center;
+  /* background-color: #F3E6DA; */
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
 }
 .navbarcontent {
-  padding: 5px 8rem 0 8rem; 
+  padding: 9px 6rem 0 6rem;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  transition: all 0.4s ease-in-out; 
-
+  transition: all 0.4s ease-in-out;
+  position: relative;
 }
 
 .navbarlink {
   flex: 1.3;
+  display: flex;
+  align-items: center;
+
 }
 .navbarlink a,
 .navbarbuttons a {
   text-decoration: none;
   cursor: pointer;
-  color: #fff;
+  color: #222;
   transition: all 0.4s ease 0s;
   padding: 15.5px 30px 20px 10px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   line-height: 21px;
@@ -41,14 +43,13 @@
 .navbarbuttons a:hover {
   color: #d2461c;
 }
-.navbarlink a::before,
-.navbarbuttons a::before {
+.navbarlink a::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0.7rem;
+  bottom: 0.9rem;
   width: 90%;
-  height: 0.5px;
+  height: 4px;
   background-color: #c96;
   transform: scaleX(0);
   -webkit-transform-origin: right center;
@@ -62,17 +63,85 @@
   display: block;
   transform: scale(1);
 }
-.navbarlink a:hover::before,
-.navbarbuttons a:hover::before {
+.navbarlink a:hover::before {
   display: block;
   transform: scale(1);
   transform-origin: left center;
 }
-.navbarbuttons {
+/* .navbarbuttons {
   flex: 0.2;
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+
+.infocontainer {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 0.4rem;
+}
+.infocontainer a {
+  display: block;
+  padding: 0.2rem 1rem 1rem 1rem;
+  color: rgba(34, 34, 34, 0.849);
+  font-weight: 400;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+}
+.infocontainer a:hover,
+.productcartdetails h4 a:hover {
+  color: #c96;
+}
+
+.cartdropdowndiv {
+  position: relative;
+  display: flex;
+}
+.cartdropdowndiv:hover .cartdropdown ul {
+  /* display: block; */
+  visibility: visible;
+  opacity: 1;
+}
+.checkoutbutton:focus .cartdropdowndiv {
+  display: none;
+}
+
+.cartdropdown {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.cartdropdown ul {
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
+  list-style: none;
+  position: absolute;
+  top: -2px;
+  right: 0;
+  z-index: 9999;
+  width: 300px;
+  max-height: 425px;
+  padding: 1rem 1.2rem 1.8rem 1.2rem;
+  background-color: #fff;
+  -webkit-box-shadow: 5px 10px 16px rgb(51 51 51 / 5%),
+    -5px 10px 16px rgb(51 51 51 / 5%);
+  box-shadow: 5px 10px 16px rgb(51 51 51 / 5%),
+    -5px 10px 16px rgb(51 51 51 / 5%);
+  -webkit-transition: opacity 0.4s;
+  transition: all 0.4s;
+  overflow-y: auto;
+}
+.cartdropdown ul:hover .cartdropdown ul {
+  /* display: block; */
+  visibility: visible;
+  opacity: 1;
+}
+.cartdropdowndiv:hover .cartdropdown ul {
+  /* display: block; */
+  visibility: visible;
+  opacity: 1;
 }
 
 .cartcount {
@@ -96,7 +165,7 @@
   list-style: none;
   position: absolute;
   top: 100%;
-  right: 0;
+  right: -15px;
   z-index: 1000;
   min-width: 218px;
   padding: 1rem 0 1.3rem;
@@ -117,6 +186,8 @@
   letter-spacing: 0;
   padding: 0.5rem 2rem;
   text-transform: capitalize;
+  text-decoration: none;
+  cursor: pointer;
 }
 .profiledropdown ul li a:hover::before {
   display: none;
@@ -128,32 +199,147 @@
   font-size: 30px;
   background-color: transparent;
   outline: none;
-  color: white;
+  color: #c96;
   border: none;
   cursor: pointer;
   padding: 5px;
   display: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
+.logocontainer {
+  /* display: flex;
+  align-items: center; */
+  margin-left: 9rem;
+  /* padding: 15.5px 30px 20px 10px; */
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 150px; /* Need a specific value to work */
+}
+.logocontainer img {
+  width: 170px;
+  object-fit: contain;
+  cursor: pointer;
+}
 
+.cartdropdownitem {
+  display: flex;
+  width: 100%;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.cartdropdownitem button {
+  margin-left: 1.5rem;
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  color: #666;
+}
+.productcartdetails {
+  font-weight: 400;
+  width: 150px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+.productimgcontainer {
+  max-width: 50px;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.productimgcontainer img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border-style: none;
+}
+.dropdowncarttotal {
+  padding: 0.6rem 0 0.4rem;
+  display: flex;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 400;
+  justify-content: space-between;
+}
+
+.dropdownbuttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.viewcartbutton {
+  padding: 10px;
+  width: 120px;
+  height: 45px;
+  border: 2px solid #c96;
+  background-color: #c96;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 16px;
+  color: white;
+  transition: all 0.4s ease;
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.viewcartbutton:hover {
+  background-color: white;
+  color: #c96;
+}
+
+.checkoutbutton {
+  padding: 10px;
+  width: 120px;
+  height: 45px;
+  border: 2px solid #c96;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 16px;
+  color: #c96;
+  transition: all 0.4s ease;
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.checkoutbutton:hover {
+  background-color: #c96;
+  color: white;
+}
+.checkoutbutton:focus .cartdropdowndiv {
+  display: none;
+}
 @media screen and (max-width: 1280px) {
   .navbarcontent {
     padding: 5px 4rem 0 4rem;
-
   }
-
 }
 
-@media screen and (max-width: 992px) {
-  .navbarlink a {
-   display: none;
+@media screen and (max-width: 618px) {
+  .logocontainer {
+    display: none;
   }
-  .mobilemenu{
+}
+@media screen and (max-width: 1068px) {
+  .navbarlink a {
+    display: none;
+  }
+  .mobilemenu {
     display: block;
   }
   .navbarcontent {
     padding: 5px 1rem 0 1rem;
-
   }
-
-} 
+}

@@ -116,7 +116,6 @@ const Product = ({ p, i }) => {
 
       <div key={i} className={style.container}>
         <img
-          unselectable="on"
           className={style.imgcontainer}
           onClick={() => navigate(`/p/${p.slug}`)}
           src={images && images[0].url}
@@ -143,7 +142,7 @@ const Product = ({ p, i }) => {
           </Tooltip>
         </div>
         <div className={style.productname}>
-          <h4>{p.title}</h4>
+          <h3 style={{ fontWeight: "500", color: "#333" }}>{p.title}</h3>
         </div>
         <div className={style.info}>
           <div className={style.button}>
@@ -152,8 +151,43 @@ const Product = ({ p, i }) => {
             </button>
           </div>
         </div>
-        <div className={style.price}>
+        {/* <div className={style.price}>
           <span>{p.price} TND</span>
+        </div> */}
+        <div className={style.pinfo}>
+          <div className={style.left}>
+            <div style={{ display: "flex", marginRight: "2px" }}>
+              <div
+                style={{ backgroundColor: "#45458F" }}
+                className={style.coloroption}
+              ></div>
+              <div
+                style={{ backgroundColor: "#86AD91" }}
+                className={style.coloroption}
+              ></div>
+              <div
+                style={{ backgroundColor: "#CD7551" }}
+                className={style.coloroption}
+              ></div>
+            </div>
+            <span className={style.sp}></span>
+            <div style={{ display: "flex", marginRight: "2px" }}>
+              <div className={style.sizeoption}>
+                <span>S</span>
+              </div>
+              <div className={style.sizeoption}>
+                <span>X</span>
+              </div>
+              <div className={style.sizeoption}>
+                <span>L</span>
+              </div>
+            </div>
+          </div>
+          <div className={style.right}>
+            <span style={{ fontWeight: "500", color: "#333" }}>
+              {p.price} TND{" "}
+            </span>
+          </div>
         </div>
       </div>
     </>

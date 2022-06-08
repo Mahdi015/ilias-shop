@@ -23,3 +23,4 @@ export { default as ListOrders } from "./Pages/Admin/AdminPages/Orders/ListOrder
 export { default as ProductAddedToCart } from "./Modal/ProductAddedToCart";
 export { default as Wishlist } from "./Pages/Wishlist/Wishlist";
 export { default as SingelOrder } from "./Pages/Admin/AdminPages/Orders/SingelOrder";
+export { default as Contact } from "./Pages/Contact/Contact";

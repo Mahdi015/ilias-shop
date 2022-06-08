@@ -73,7 +73,7 @@
   border-radius: 50%;
   margin: 0 6px;
   cursor: pointer;
-  border: solid 0.2px  rgba(204, 153, 102, 0.629);
+  border: solid 0.2px  rgba(204, 153, 102, 0.629); 
   position: relative;
 }
 .filtercolor::before{

@@ -206,7 +206,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
               />
               <Skeleton height={60} variant="text" animation="wave" />
             </Stack>
-            <Stack spacing={0.5}>
+            <Stack spacing={1}>
               <Skeleton
                 variant="rectangular"
                 animation="wave"
