@@ -58,7 +58,7 @@ const Checkout = () => {
       {user && user.length !== 0 ? (
         <div className={style.userleftcontainer}>
           <div className={style.userinfocontainer}>
-            <h3>Delivery Adresse</h3>
+            <h3>Adresse de livraison</h3>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span style={{ color: "#666" }}>{user.name}</span>
               <span style={{ color: "#666" }}>{user.adresse}</span>
@@ -74,7 +74,7 @@ const Checkout = () => {
               }}
               className={style.updateadressebtn}
             >
-              <button style={{ width: "60%" }}>Update</button>
+              <button style={{ width: "60%" }}>Mise à jour</button>
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ const Checkout = () => {
         </table>
         <div className={style.button}>
           {user && user.length !== 0 ? (
-            <button onClick={(e) => handleCheckOut(e)}>Place Order</button>
+            <button onClick={(e) => handleCheckOut(e)}>Passez commande</button>
           ) : (
             <button form="myform" type="submit">
               Commander

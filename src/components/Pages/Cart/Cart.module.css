@@ -351,5 +351,8 @@
   .continushopbtn{
     visibility: visible;
   }
+  .productmedia{
+    margin-bottom: 3rem;
+  }
 
 }

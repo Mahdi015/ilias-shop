@@ -5,12 +5,9 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import styles from "./ProductAddedToCart.module.css";
 import { AiFillCloseCircle } from "react-icons/ai";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import { useSelector } from "react-redux";
-
 import { useNavigate } from "react-router-dom";
-import img from "./mark.png";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -20,7 +17,7 @@ const style = {
   bgcolor: "background.paper",
   borderRadius: "5px",
   boxShadow: 24,
-  p: 6,
+  p: 5,
   outline: "none",
 
   "@media (max-width: 780px)": {
@@ -73,7 +70,10 @@ export default function ProductAddedToCart({
             <div className={styles.container}>
               <h3>Product Added To Cart !</h3>
               <div className={styles.imgcontainer}>
-                <img className={styles.scaleupcenter} src={img} />
+                <img
+                  className={styles.scaleupcenter}
+                  src="https://res.cloudinary.com/ds5eqdcxk/image/upload/v1654711715/mark_pmh6na.png"
+                />
               </div>
               {cart && cart.length !== 0 && (
                 <>
@@ -86,13 +86,13 @@ export default function ProductAddedToCart({
                   onClick={() => navigate("/shopcollection")}
                   className={styles.shopmorebtn}
                 >
-                  Shop More
+                  Continuer mes achats
                 </button>
                 <button
                   onClick={() => navigate("/checkout")}
                   className={styles.checkoutbtn}
                 >
-                  Checkout
+                  Passer à la caisse
                 </button>
               </div>
             </div>

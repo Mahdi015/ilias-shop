@@ -196,35 +196,47 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
             </a>
           )}
 
-          <Badge
-            badgeContent={wishlist ? wishlist.length : "0"}
-            color="warning"
-            sx={{
-              "& .MuiBadge-badge": { fontSize: 11, height: 18 },
-              p: 0.6,
-              ["@media (max-width:780px)"]: {
-                p: 0,
-              },
-            }}
+          <div
+            className={styles.wishlistdiv}
+      
           >
-            <a href="/wishlist" style={{ paddingRight: "0" }}>
-              <div
-                style={{
-                  alignItems: "center",
-                  display: "flex",
-                }}
+            <Badge
+              badgeContent={wishlist ? wishlist.length : "0"}
+              color="warning"
+              sx={{
+                "& .MuiBadge-badge": {
+                  backgroundColor: "#c96",
+                },
+                p: 0.6,
+                ["@media (max-width:780px)"]: {
+                  p: 0,
+                },
+              }}
+            >
+              <a
+                href="/wishlist"
+                style={{ paddingRight: "0", paddingLeft: "5px" }}
               >
-                <AiOutlineHeart size={"1.4em"} />
-              </div>
-            </a>
-          </Badge>
+                <div
+                  style={{
+                    alignItems: "center",
+                    display: "flex",
+                  }}
+                >
+                  <AiOutlineHeart size={"1.4em"} />
+                </div>
+              </a>
+            </Badge>
+          </div>
 
           <div className={styles.cartdropdowndiv}>
             <Badge
               badgeContent={cartLength ? cartLength : "0"}
               color="warning"
               sx={{
-                "& .MuiBadge-badge": { fontSize: 11, height: 18 },
+                "& .MuiBadge-badge": {
+                  backgroundColor: "#c96",
+                },
                 p: 0.6,
                 ["@media (max-width:780px)"]: {
                   p: 0,
@@ -244,7 +256,10 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
                     size={"1.4em"}
                   />{" "}
                   <span style={{ marginLeft: "0.5rem" }}>
-                    <span style={{ cursor: "pointer" }}>
+                    <span
+                      className={styles.carttotalspan}
+                      style={{ cursor: "pointer" }}
+                    >
                       {cartTotal ? `${cartTotal} TND` : "0.00 TND"}
                     </span>
 

@@ -17,13 +17,15 @@ const Cart = () => {
   }, [cart]);
   return (
     <div className={style.wrapper}>
-      <h1 style={{ textAlign: "center", fontWeight: "300" }}>Your Bag</h1>
+      <h1 style={{ textAlign: "center", fontWeight: "300" }}>Panier</h1>
       <div className={style.top}>
-        <button className={style.topbutton}>Continue Shopping</button>
-        <div className={style.toptexts}>
+        <button style={{ width: "250px" }} className={style.checkoutbtn}>
+          Continuer vos achats
+        </button>
+        {/* <div className={style.toptexts}>
           <span>Shopping Bag({cart && cart.length})</span>
           <span>Your Whishlist (0)</span>
-        </div>
+        </div> */}
       </div>
       {cart && cart.length !== 0 ? (
         <div className={style.bottom}>
@@ -31,10 +33,10 @@ const Cart = () => {
             <table>
               <thead>
                 <tr style={{ textAlign: "left" }}>
-                  <th style={{ width: "400px" }}>Product</th>
-                  <th style={{ width: "120px" }}>Price</th>
-                  <th style={{ width: "120px" }}>Quantity</th>
-                  <th style={{ width: "88px" }}>Total</th>
+                  <th style={{ width: "400px" }}>Produit</th>
+                  <th style={{ width: "120px" }}>Prix</th>
+                  <th style={{ width: "120px" }}>Quantité</th>
+                  <th style={{ width: "88px" }}>Totale</th>
                   <th
                     style={{
                       width: "38px",
@@ -71,7 +73,7 @@ const Cart = () => {
               </h3>
             </div>
             <div className={style.orderitem}>
-              <h3>Expédition</h3>
+              <h3>Livraison</h3>
               <h3> 7 TND</h3>
             </div>
             <div className={style.orderitem}>

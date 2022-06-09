@@ -97,6 +97,7 @@
 .cartdropdowndiv {
   position: relative;
   display: flex;
+  align-items: center;
 }
 .cartdropdowndiv:hover .cartdropdown ul {
   /* display: block; */
@@ -210,7 +211,7 @@
 .logocontainer {
   /* display: flex;
   align-items: center; */
-  margin-left: 9rem;
+
   /* padding: 15.5px 30px 20px 10px; */
   position: absolute;
   left: 0; 
@@ -321,15 +322,30 @@
 .checkoutbutton:focus .cartdropdowndiv {
   display: none;
 }
+.wishlistdiv{
+  display:"flex";
+  align-items: center;
+}
 @media screen and (max-width: 1280px) {
   .navbarcontent {
     padding: 5px 4rem 0 4rem;
   }
 }
 
-@media screen and (max-width: 618px) {
-  .logocontainer {
+@media screen and (max-width: 680px) {
+  .carttotalspan {
     display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wishlistdiv {
+    display: none;
+  }
+  .infocontainer a {
+    padding-left: 5px;
+  }
+  .logocontainer img {
+    width: 150px;
   }
 }
 @media screen and (max-width: 1068px) {

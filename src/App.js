@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import ScrollToTop from "react-scroll-to-top";
 import {
   Header,
   Navbar,
@@ -26,7 +27,7 @@ import {
   Contact,
 } from "./components";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./ScrollToTop";
+import ScrollToTopMe from "./ScrollToTop";
 import "react-phone-number-input/style.css";
 import { useDispatch } from "react-redux";
 import { testCookie } from "./functions/auth";
@@ -81,7 +82,7 @@ function App() {
       >
         <div className="mobileoverlay"></div>
         <Router>
-          <Announcement />
+          <Announcement setOpen={setOpen} />
           {/* <Header /> */}
           <Navbar
             setOpen={setOpen}
@@ -96,7 +97,8 @@ function App() {
           />
           <Toaster />
           <LoginModal LoginOpen={LoginOpen} setLoginOpen={setLoginOpen} />
-          <ScrollToTop />
+          <ScrollToTopMe />
+          <ScrollToTop smooth color="#c96" width="30" height="30" />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/p/:slug" element={<ProductPage />} />

@@ -252,7 +252,10 @@ const Product = () => {
               fontSize: "1.5rem",
             }}
           >
-            {price} TND
+            {price}
+            <span style={{ fontSize: ".9375rem", marginLeft: ".3rem" }}>
+              TND
+            </span>
           </span>
           <p>
             {" "}
@@ -277,7 +280,7 @@ const Product = () => {
                   ))}
               </div>
               <div className={style.filter}>
-                <h1 style={{ margin: 0 }}>Size:</h1>
+                <h1 style={{ margin: 0 }}>Taille:</h1>
                 <select
                   onChange={(e) => handleSizeChange(e)}
                   required
@@ -285,7 +288,7 @@ const Product = () => {
                   className={style.filtersize}
                 >
                   <option value="" defaultChecked>
-                    Select size
+                    CHOISIR LA TAILLE
                   </option>
 
                   {size &&
@@ -332,7 +335,7 @@ const Product = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  ADD TO CARD
+                  AJOUTER AU PANIER
                 </span>
               </button>
               <span className={`${style.wishlistspan} ${style.noselect}`}>
@@ -343,7 +346,7 @@ const Product = () => {
                   }}
                   size={"1.2em"}
                 />{" "}
-                Add to wishlist
+                Ajouter aux favoris
               </span>
             </div>
           </form>
@@ -353,7 +356,7 @@ const Product = () => {
       <div className={style.youmayalsolike}>
         <div className={style.textcontainer}>
           <div className={style.spancontainer}>
-            <span>You May Also Like</span>
+            <span>VOUS AIMEREZ AUSSI</span>
             <div className={style.sm_border}></div>
           </div>
         </div>

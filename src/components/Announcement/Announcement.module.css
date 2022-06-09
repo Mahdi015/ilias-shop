@@ -8,17 +8,44 @@
   font-size: 12px;
   font-weight: 400;
   border-bottom: solid 0.5px rgba(128, 128, 128, 0.493);
+  
   /* background-color: teal; */
 }
 
-@media screen and (max-width: 550px) {
+/* @media screen and (max-width: 550px) {
   .phonespan{
     display:none
   }
+} */
+
+.select {
+  min-width: 131px;
+  font-weight: 400;
+  padding: 3px 30px 3px 30px;
+  background-color: transparent;
+  border-color: #d7d7d7;
+  outline: none;
+  color: #666;
 }
 
-@media screen and (max-width: 300px) {
+.langselectdiv{ 
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.flagspan{
+  height: 28.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 5px;
+}
+@media screen and (max-width: 805px) {
   .announcement{
+    display:none
+  }
+  .phonespan{
     display:none
   }
 }

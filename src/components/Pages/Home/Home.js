@@ -37,8 +37,8 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
 
       <div className={style.textcontainer}>
         <div className={style.spancontainer}>
-          <span>Trending</span>
-          <div className={style.sm_border} style={{ left: "40px" }}></div>
+          <span>NOS MEILLEURES VENTES</span>
+          <div className={style.sm_border} id={style.top}></div>
         </div>
       </div>
       <div className={style.nexarrivals}>
@@ -77,7 +77,7 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
               />
               <Skeleton height={60} variant="text" animation="wave" />
             </Stack>
-            <Stack spacing={0.5}>
+            <Stack spacing={1}>
               <Skeleton
                 variant="rectangular"
                 animation="wave"
@@ -169,8 +169,8 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
 
       <div className={style.textcontainer}>
         <div className={style.spancontainer}>
-          <span>New Arrivals</span>
-          <div className={style.sm_border} style={{ left: "60px" }}></div>
+          <span>NOUVELLES ARRIVRES</span>
+          <div className={style.sm_border}></div>
         </div>
       </div>
 

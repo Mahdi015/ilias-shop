@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./Slider.module.css";
-import {
-  BsFillArrowLeftCircleFill,
-  BsFillArrowRightCircleFill,
-} from "react-icons/bs";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import img0 from "../../images/test.png";
 import img1 from "../../images/1.png";
 import img2 from "../../images/2.png";
@@ -39,10 +36,7 @@ const Slider = () => {
   return (
     <div className={style.container}>
       <div className={style.rightarrow}>
-        <BsFillArrowRightCircleFill
-          onClick={() => handleRight()}
-          size={"2em"}
-        />
+        <IoIosArrowForward onClick={() => handleRight()} size={"2em"} />
       </div>
       <div
         style={{ transform: `translatex(${vwValue})` }}
@@ -90,9 +84,9 @@ const Slider = () => {
         </div>
       </div>
       <div className={style.leftarrow}>
-        <BsFillArrowLeftCircleFill onClick={() => handleLeft()} size={"2em"} />
+        <IoIosArrowBack onClick={() => handleLeft()} size={"2em"} />
       </div>
-      <button className={style.phonebtn} >Shop Now</button>
+      <button className={style.phonebtn}>Shop Now</button>
     </div>
   );
 };

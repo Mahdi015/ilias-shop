@@ -147,7 +147,8 @@ const Product = ({ p, i }) => {
         <div className={style.info}>
           <div className={style.button}>
             <button onClick={() => setAddToCartModalOpen(true)}>
-              <MdAddShoppingCart style={{ marginRight: "5px" }} /> Add To Cart
+              <MdAddShoppingCart style={{ marginRight: "5px" }} />
+              AJOUTER AU PANIER
             </button>
           </div>
         </div>

@@ -11,7 +11,7 @@ const Contact = () => {
             width="100%"
             height="500"
             id="gmap_canvas"
-            src="https://maps.google.com/maps?q=sfax%20sakiete&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=sfax%20sakiete%20ezitte&t=&z=13&ie=UTF8&iwloc=&output=embed"
             frameborder="0"
             scrolling="no"
             marginheight="0"

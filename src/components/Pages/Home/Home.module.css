@@ -9,9 +9,10 @@
   position: relative;
   display: flex;
   letter-spacing: 0.1em;
-  font-size: 33px;
+  font-size: 28px;
   margin-bottom: 4rem;
-  font-weight: 700;
+  font-weight: 500;
+  color:#333;
 }
 .nexarrivals {
   padding: 20px;
@@ -34,15 +35,17 @@
     flex-basis: 35%;
   }
 }
- 
+  
 .sm_border {
   content: "";
-  display: block;
   height: 3px;
   position: absolute;
-  width: 50%;
-  bottom: 0px;
-  right: 0px;
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 200px; /* Need a specific value to work */
   background-color: #c96;
 }
 .infobar {
@@ -70,6 +73,7 @@
 .span2{
   font-size: 0.9rem;
 }
+
 @media screen and (max-width: 1391px) {
   .nexarrivals {
     margin: 0 60px;
@@ -101,3 +105,10 @@
   margin-bottom: 1.5rem;
 }
 }
+
+@media screen and (max-width: 399px) {
+  .spancontainer {
+   font-size: 20px;
+  }
+}
+ 

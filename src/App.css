@@ -1,7 +1,12 @@
 * {
   font-family: var(--font-family);
+  
 }
 
+::selection {
+  background-color: #c96;
+  color: #fff;
+}
 .pagewrapper{
   position: relative;
   -webkit-transition: -webkit-transform .4s ease;

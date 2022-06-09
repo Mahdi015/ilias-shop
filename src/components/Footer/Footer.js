@@ -65,14 +65,14 @@ const Footer = () => {
 
         <div className={style.newslettercontainer}>
           <h1>Newsletter</h1>
-          <h4>Get timely updates from your favourite products</h4>
+          <h4>Inscrivez-vous à notre newsletter</h4>
           <div className={style.newsletterui}>
-            <input type="text" placeholder="Enter Your Email" />
-            <button>Subscribe Now</button>
+            <input type="text" placeholder="Entrer votre Email" />
+            <button>S'inscrire</button>
           </div>
         </div>
         <div className={style.copyright}>
-          <h4>Copyright © 2022 Ilias Shop </h4>
+          <h4>Copyright © 2022 Ilias Shop</h4>
         </div>
       </div>
     </>
