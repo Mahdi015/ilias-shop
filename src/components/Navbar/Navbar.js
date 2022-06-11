@@ -161,7 +161,7 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
             <div className={styles.profiledropdown}>
               <a style={{ paddingRight: "0" }}>
                 {" "}
-                <span>{user.name}</span>
+                <span className="noselect">{user.name}</span>
               </a>
               <ul>
                 <li>
@@ -196,10 +196,7 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
             </a>
           )}
 
-          <div
-            className={styles.wishlistdiv}
-      
-          >
+          <div className={styles.wishlistdiv}>
             <Badge
               badgeContent={wishlist ? wishlist.length : "0"}
               color="warning"
@@ -257,7 +254,7 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
                   />{" "}
                   <span style={{ marginLeft: "0.5rem" }}>
                     <span
-                      className={styles.carttotalspan}
+                      className={`${styles.carttotalspan}  noselect`}
                       style={{ cursor: "pointer" }}
                     >
                       {cartTotal ? `${cartTotal} TND` : "0.00 TND"}

@@ -94,7 +94,7 @@ const ShopCollection = () => {
 
   return (
     <>
-      <h1
+      {/* <h1
         style={{
           textAlign: "center",
           color: "#333",
@@ -102,8 +102,13 @@ const ShopCollection = () => {
           margin: "2rem 0 2rem 0",
         }}
       >
-        Shop Collection
-      </h1>
+        
+      </h1> */}
+      <div className="header">
+        <h3 style={{ color: "#888", fontSize: "1.3rem", fontWeight: "500" }}>
+          Shop Collection
+        </h3>
+      </div>
       <div className={style.container}>
         <div className={style.filterpanel}>
           <h2
@@ -328,7 +333,14 @@ const ShopCollection = () => {
               {loading ? (
                 <CircularProgress />
               ) : (
-                <h3 style={{ color: "#333", fontWeight: "500" }}>
+                <h3
+                  style={{
+                    color: "#333",
+                    fontWeight: "500",
+                    marginTop: "2rem",
+                    textAlign: "center",
+                  }}
+                >
                   Aucun produit trouvé
                 </h3>
               )}

@@ -60,10 +60,19 @@ const Checkout = () => {
           <div className={style.userinfocontainer}>
             <h3>Adresse de livraison</h3>
             <div style={{ display: "flex", flexDirection: "column" }}>
+              <span style={{ color: "#333", fontWeight: "600" }}>Nom</span>
               <span style={{ color: "#666" }}>{user.name}</span>
+              <span style={{ color: "#333", fontWeight: "600" }}>Adresse</span>
               <span style={{ color: "#666" }}>{user.adresse}</span>
+              <span style={{ color: "#333", fontWeight: "600" }}>Ville</span>
               <span style={{ color: "#666" }}>{user.city}</span>
+              <span style={{ color: "#333", fontWeight: "600" }}>
+                Téléphone
+              </span>
               <span style={{ color: "#666" }}>{user.mobileNumber}</span>
+              <span style={{ color: "#333", fontWeight: "600" }}>
+                Code Postal
+              </span>
               <span style={{ color: "#666" }}>{user.zipcode}</span>
             </div>
             <div

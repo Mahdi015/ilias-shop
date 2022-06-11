@@ -140,7 +140,13 @@ const Header = () => {
                   size={"1.4em"}
                 />{" "}
                 <span style={{ marginLeft: "0.5rem" }}>
-                  <span style={{ cursor: "pointer" }}>
+                  <span
+                    style={{
+                      cursor: "pointer",
+                      userSelect: "none",
+                      WebkitUserSelect: "none",
+                    }}
+                  >
                     {cartTotal ? `${cartTotal} TND` : "0.00 TND"}
                   </span>
 

@@ -25,10 +25,13 @@ const MobileMenuTab = ({ mobileMenu, setmobileMenu }) => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/shopcollection">Shop Collection</a>{" "}
+            <a href="/shopcollection">Nouveauté</a>{" "}
           </li>
           <li>
             <a href="/cart">My Cart</a>{" "}
+          </li>
+          <li>
+            <a href="/wishlist">Favoris</a>{" "} 
           </li>
           <li>
             <a href="/aboutus">About us</a>
