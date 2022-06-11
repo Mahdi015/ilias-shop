@@ -82,7 +82,7 @@ const Checkout = () => {
         <div className={style.leftcontainer}>
           <div className={style.logindiv}>
             <span style={{ marginRight: "3px" }}>
-              Connectez-vous pour enregistrer vos informations{" "}
+              Connectez-vous Et gagnez du temps pour votre prochaine commande{" "}
             </span>
             <a href="#" style={{ marginRight: "3px" }}>
               {" "}
@@ -98,7 +98,7 @@ const Checkout = () => {
           </div>
           <div className={style.formcontainer}>
             <form id="myform" onSubmit={(e) => handleCheckOut(e)}>
-              <h2>Commande instantanée</h2>
+              <h2>COMMANDER EN TANT QU'INVITÉ</h2>
               <div className={style.formrow}>
                 <div className={style.inputgroup}>
                   <label>Prénom *</label>
