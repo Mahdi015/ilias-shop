@@ -98,7 +98,9 @@ function App() {
           <Toaster />
           <LoginModal LoginOpen={LoginOpen} setLoginOpen={setLoginOpen} />
           <ScrollToTopMe />
-          <ScrollToTop smooth color="#c96" width="30" height="30" />
+          <div className="fixpos">
+            <ScrollToTop smooth color="#c96" width="30" height="30" />
+          </div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/p/:slug" element={<ProductPage />} />

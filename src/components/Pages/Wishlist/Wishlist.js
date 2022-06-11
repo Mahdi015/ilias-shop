@@ -8,8 +8,8 @@ const Wishlist = () => {
 
   return (
     <div className={style.container}>
-      <div className={style.header}>
-        <h3 style={{ coloe: "#666", fontSize: "1.4rem", fontWeight: "600" }}>
+      <div className="header">
+        <h3 style={{ color: "#888", fontSize: "1.3rem", fontWeight: "500" }}>
           Mes favoris
         </h3>
       </div>

@@ -35,3 +35,20 @@
   visibility: visible;
     opacity: 1;
 }
+
+.fixpos button{
+  bottom: 100px;
+  right: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header{
+  width: 100%;
+  height: 80px;
+  background-color: #DACAAD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

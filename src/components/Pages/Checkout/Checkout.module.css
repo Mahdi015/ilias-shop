@@ -40,7 +40,7 @@
 }
 .logindiv {
   padding: 6px;
-  display: flex;
+
   border-radius: 0.3rem;
   border: 1px dashed #d7d7d7;
   width: fit-content;
@@ -49,7 +49,7 @@
 }
 .logindiv span {
   color: #666;
-  white-space: nowrap;
+
 }
 .logindiv a {
   text-decoration: none;
