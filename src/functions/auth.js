@@ -68,7 +68,7 @@ export const verifyAdmin = async () =>
   );
 
 export const userLogout = async () =>
-  await axios.post(
+  await axios.get(
     `${process.env.REACT_APP_API}/users/logout`,
     {},
     {
