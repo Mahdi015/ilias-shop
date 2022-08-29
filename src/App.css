@@ -61,3 +61,16 @@
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+::-webkit-scrollbar{
+  width: 18px;
+}
+::-webkit-scrollbar-track{
+  background: #999;
+ 
+
+}
+::-webkit-scrollbar-thumb{
+  background: #c96;
+  border-radius: 100vw;
+  
+}
