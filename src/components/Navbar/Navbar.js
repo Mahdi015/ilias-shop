@@ -7,6 +7,8 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { userLogout } from "../../functions/auth";
 import { useNavigate } from "react-router-dom";
 import img from "./logo-fashion-store.svg";
+import logo from "../../images/final-logo-v1.png";
+
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { useDispatch } from "react-redux";
@@ -109,7 +111,7 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
           <a href="#">Fille</a>
 
           <div className={styles.logocontainer}>
-            <img onClick={() => navigate("/")} src={img} />
+            <img onClick={() => navigate("/")} src={logo} />
           </div>
         </div>
 

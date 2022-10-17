@@ -4,7 +4,7 @@ import img from "./logo.png";
 import pimg from "./TissuB.png";
 import { GrClose } from "react-icons/gr";
 import { useDispatch } from "react-redux";
-
+import logo from "../../images/final-logo-v1.png";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -75,7 +75,7 @@ const Header = () => {
 
       <div className={styles.logocontainer}>
         <a href="/" target="_self">
-          <img src={img} />
+          <img src={logo} />
         </a>
       </div>
 

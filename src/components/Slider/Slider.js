@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import style from "./Slider.module.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import img0 from "../../images/test.png";
-import img1 from "../../images/1.png";
-import img2 from "../../images/2.png";
+import img0 from "../../images/new.png";
+import img1 from "../../images/new2.png";
 import img3 from "../../images/3.png";
-import wave from "./wave.svg";
 const Slider = () => {
   const [vwValue, setvwValue] = useState("-100vw");
-  const [index, setindex] = useState(1);
+  const [index, setindex] = useState(0);
   useEffect(() => {
     switch (index) {
       case 0: {
@@ -24,7 +22,7 @@ const Slider = () => {
   }, [index]);
   const handleRight = () => {
     {
-      setindex(index < 2 ? index + 1 : 0);
+      setindex(index < 1 ? index + 1 : 0);
     }
     console.log(index);
   };
@@ -44,9 +42,20 @@ const Slider = () => {
         style={{ transform: `translatex(${vwValue})` }}
         className={style.wrapper}
       >
-        <div className={style.slide}>
+        {/* <div className={style.slide}>
           <div className={style.imgContainer}>
             <img src={img3} />
+          </div>
+          <div className={style.infoContainer}>
+            <h1>Ilias Shop</h1>
+            <p>Vêtement , Accessoire Bébé Enfant ...</p>
+            <button>Découvrez Maintenant !</button>
+          </div>
+        </div> */}
+
+        <div className={style.slide}>
+          <div className={style.imgContainer}>
+            <img src={img1} />
           </div>
           <div className={style.infoContainer}>
             <h1>Ilias Shop</h1>
@@ -58,16 +67,6 @@ const Slider = () => {
         <div className={style.slide}>
           <div className={style.imgContainer}>
             <img src={img0} />
-          </div>
-          <div className={style.infoContainer}>
-            <h1>Ilias Shop</h1>
-            <p>Vêtement , Accessoire Bébé Enfant ...</p>
-            <button>Découvrez Maintenant !</button>
-          </div>
-        </div>
-        <div className={style.slide}>
-          <div className={style.imgContainer}>
-            <img src={img1} />
           </div>
           <div className={style.infoContainer}>
             <h1>Ilias Shop</h1>
