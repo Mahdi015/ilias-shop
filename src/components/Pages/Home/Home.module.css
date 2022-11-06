@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .spancontainer {
   position: relative;
   display: flex;
@@ -12,8 +13,9 @@
   font-size: 28px;
   margin-bottom: 4rem;
   font-weight: 500;
-  color:#333;
+  color: #333;
 }
+
 .nexarrivals {
   padding: 20px;
   display: flex;
@@ -22,7 +24,8 @@
   margin: 0 100px;
   transition: all 0.4s ease-in-out;
 }
-.pcontainer{
+
+.pcontainer {
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
@@ -30,24 +33,27 @@
   justify-content: center;
 
 }
+
 @media screen and (max-width: 1300px) {
   .pcontainer {
     flex-basis: 35%;
   }
 }
-  
+
 .sm_border {
   content: "";
   height: 3px;
   position: absolute;
-  left: 0; 
-  right: 0; 
+  left: 0;
+  right: 0;
   bottom: 0;
-  margin-left: auto; 
-  margin-right: auto; 
-  width: 200px; /* Need a specific value to work */
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  /* Need a specific value to work */
   background-color: #c96;
 }
+
 .infobar {
   padding: 50px 0 30px;
   background-color: rgb(34, 34, 34);
@@ -63,23 +69,146 @@
 .spannn {
   color: #c96;
 }
+
 .infobarelement {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-} 
-.span2{
+}
+
+.span2 {
   font-size: 0.9rem;
 }
+
+.staticproducts__container {
+  padding: 40px;
+  margin: 0 160px;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.4s ease-in-out;
+
+}
+
+.staticproducts__container img {
+
+  height: 850px;
+  object-fit: cover;
+
+}
+
+.genreCard {
+ width: 44%;
+  height: 380px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  background-color: #D5DBE0;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.genreCard:hover .cardDetails {
+  bottom: 25px;
+}
+
+.genreCard:hover .cardDetails a {
+  visibility: visible;
+  opacity: 1;
+}
+
+.genreCard:hover img {
+  transform: scale(1.05);
+}
+
+.genreCard img {
+  transform: scale(1);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-transition: all .4s ease-out 0s;
+  -moz-transition: all .4s ease-out 0s;
+  -ms-transition: all .4s ease-out 0s;
+  -o-transition: all .4s ease-out 0s;
+  transition: all .4s ease-out 0s;
+  z-index: 3;
+
+}
+
+
+.genreCard::before {
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  content: "";
+  z-index: 1;
+  background: -moz-linear-gradient(top, rgba(41, 38, 33, 0) 0%, rgb(70, 61, 52) 100%);
+  background: -webkit-linear-gradient(top, rgba(41, 38, 33, 0) 0%, rgb(70, 61, 52) 100%);
+  background: linear-gradient(to bottom, rgba(41, 38, 33, 0) 0%, rgb(70, 61, 52) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00292621', endColorstr='#292621', GradientType=0);
+}
+
+.cardDetails {
+  -webkit-transition: all .4s ease-out 0s;
+  -moz-transition: all .4s ease-out 0s;
+  -ms-transition: all .4s ease-out 0s;
+  -o-transition: all .4s ease-out 0s;
+  transition: all .4s ease-out 0s;
+  position: absolute;
+  margin: 0 auto;
+  bottom: -10px;
+  left: 0;
+  text-align: center;
+  right: 0;
+  z-index: 3;
+
+
+
+}
+
+.cardDetails h4 {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+
+}
+
+.cardDetails a {
+  position: relative;
+  -webkit-transition: all .4s ease-out 0s;
+  -moz-transition: all .4s ease-out 0s;
+  -ms-transition: all .4s ease-out 0s;
+  -o-transition: all .4s ease-out 0s;
+  transition: all .4s ease-out 0s;
+  opacity: 0;
+  visibility: hidden;
+  color: #c96;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cardDetails a::before {
+  position: absolute;
+  content: "";
+  background: #d1d1d1;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+}
+
+
 
 @media screen and (max-width: 1391px) {
   .nexarrivals {
     margin: 0 60px;
   }
 }
- 
+
 
 
 @media screen and (max-width: 1080px) {
@@ -92,23 +221,35 @@
   .span1 {
     font-size: 14px;
   }
+
   .span2 {
     font-size: 12px;
   }
 }
+
 @media screen and (max-width: 590px) {
-.infobarcontainer{
-  flex-direction: column;
-  justify-content: center;
-}
-.infobarelement{
-  margin-bottom: 1.5rem;
-}
+  .infobarcontainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .infobarelement {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 399px) {
   .spancontainer {
-   font-size: 20px;
+    font-size: 20px;
   }
 }
- 
+
+@media screen and (max-width: 1000px) {
+  .staticproducts__container {
+    flex-direction: column;
+  }
+  .genreCard{
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+}

@@ -1,11 +1,17 @@
 import React from "react";
-import { Sidebar, Slider } from "../..";
+import { Slider } from "../..";
+import img from "./test1.jpg";
+import img2 from "./test2.jpg";
+import img3 from "./test3.png";
+import img4 from "./test4.png";
+
 import Product from "../../Product/Product";
 import style from "./Home.module.css";
 import { RiTruckLine, RiRefund2Line, RiHeadphoneLine } from "react-icons/ri";
 import { getAllProducts } from "../../../functions/products";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 // import { testcors } from "../../../functions/auth";
+import { useNavigate } from "react-router-dom";
 
 import { useEffect } from "react";
 import { useState } from "react";
@@ -14,7 +20,7 @@ import Stack from "@mui/material/Stack";
 
 const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
   const [products, setproducts] = useState([]);
-
+  const navigate = useNavigate();
   const fetchAllProducts = () => {
     getAllProducts(4).then((res) => {
       setproducts(res.data);
@@ -22,18 +28,33 @@ const Home = ({ AddToCartModalOpen, setAddToCartModalOpen }) => {
   };
   useEffect(() => {
     fetchAllProducts();
-
-    // testcors().then((res) => {
-    //   console.log(res.data);
-    // });
   }, []);
 
   return (
     <div>
-      {/* {JSON.stringify(products[0].images[0])} */}
       <Slider />
-
-      {/* <Sidebar /> */}
+      <div className={style.staticproducts__container}>
+        <div
+          className={style.genreCard}
+          onClick={() => navigate("/shopcollection/boys")}
+        >
+          <img src={img4} />
+          <div className={style.cardDetails}>
+            <h4>Garcon</h4>
+            <a>Shop Now</a>
+          </div>
+        </div>
+        <div
+          className={style.genreCard}
+          onClick={() => navigate("/shopcollection/girls")}
+        >
+          <img src={img3} />
+          <div className={style.cardDetails}>
+            <h4>Fille</h4>
+            <a>Shop Now</a>
+          </div>
+        </div>
+      </div>
 
       <div className={style.textcontainer}>
         <div className={style.spancontainer}>

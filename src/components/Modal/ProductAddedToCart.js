@@ -7,6 +7,7 @@ import styles from "./ProductAddedToCart.module.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Tick } from "react-crude-animated-tick";
 
 const style = {
   position: "absolute",
@@ -69,12 +70,14 @@ export default function ProductAddedToCart({
             </div>
             <div className={styles.container}>
               <h3>Product Added To Cart !</h3>
-              <div className={styles.imgcontainer}>
+              {/* <div className={styles.imgcontainer}>
                 <img
                   className={styles.scaleupcenter}
                   src="https://res.cloudinary.com/ds5eqdcxk/image/upload/v1654711715/mark_pmh6na.png"
                 />
-              </div>
+              </div> */}
+              <Tick size={200} />
+
               {cart && cart.length !== 0 && (
                 <>
                   <h4>You have {cart.length} product in your cart</h4>

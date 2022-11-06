@@ -255,9 +255,9 @@
 }
 .productimgcontainer img {
   display: block;
-  width: 100%;
+  width: 40px;
   height: auto;
-
+  object-fit: contain;
   border-style: none;
 }
 .dropdowncarttotal {

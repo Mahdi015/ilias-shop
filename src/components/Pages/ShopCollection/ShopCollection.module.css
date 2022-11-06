@@ -11,6 +11,7 @@
   flex-direction: column;
   transition: all 0.4s ease-in-out;
   height: 700px;
+  margin-right: 1rem;
   padding: 1.5rem;
   box-shadow: 2px 2px 11px 0 rgb(0 0 0 / 10%);
 }

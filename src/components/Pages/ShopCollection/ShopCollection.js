@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { filterAll, getAllProducts } from "../../../functions/products";
 import { CircularProgress } from "@mui/material";
+import { useParams } from "react-router-dom";
 
 const ShopCollection = () => {
   const [collectionFilter, setcollectionFilter] = useState(true);
@@ -28,6 +29,7 @@ const ShopCollection = () => {
     { color: "yellow", hex: "#F2E349" },
   ]);
   const minDistance = 10;
+  const { slug } = useParams();
   const handleChange1 = (event, newValue, activeThumb) => {
     setloading(true);
     setfiltersOn(true);
@@ -47,8 +49,7 @@ const ShopCollection = () => {
 
   const fetchAllProducts = () => {
     setloading(true);
-
-    getAllProducts(1000).then((res) => {
+    getAllProducts(1000, slug).then((res) => {
       setloading(false);
 
       setproducts(res.data);

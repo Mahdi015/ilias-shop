@@ -14,9 +14,9 @@ export const createProduct = async (values) =>
     }
   );
 
-export const getAllProducts = async (limit) =>
+export const getAllProducts = async (limit, slug) =>
   await axios.get(
-    `${process.env.REACT_APP_API}/products/getallproducts/${limit}`
+    `${process.env.REACT_APP_API}/products/getallproducts/${limit}/${slug}`
   );
 
 export const getProduct = async (slug) =>

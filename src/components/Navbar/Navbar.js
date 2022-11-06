@@ -107,8 +107,8 @@ const Navbar = ({ setOpen, setLoginOpen, setmobileMenu, mobileMenu }) => {
           >
             NOUVEAUTÉS
           </a>
-          <a href="#">garçon</a>
-          <a href="#">Fille</a>
+          <a href="/shopcollection/boys">garçon</a>
+          <a href="/shopcollection/girls">Fille</a>
 
           <div className={styles.logocontainer}>
             <img onClick={() => navigate("/")} src={logo} />

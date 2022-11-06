@@ -10,6 +10,9 @@ import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
 import Badge from "@mui/material/Badge";
 import { createProduct } from "../../../../functions/products";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+
 import toast from "react-hot-toast";
 const AddProducts = () => {
   const inits = {
@@ -17,18 +20,21 @@ const AddProducts = () => {
     description: "",
     quantity: "",
     price: "",
+    genre: "",
     images: [],
     colors: [],
     size: [],
     colorData: [
-      "Black",
-      "Brown",
-      "White",
-      "Blue",
-      "Pink",
-      "Yellow ",
-      "Green",
-      "Orange ",
+      "black",
+      "brown",
+      "white",
+      "blue",
+      "pink",
+      "yellow",
+      "green",
+      "orange",
+      "red",
+      "grey",
     ],
     sizeData: ["XS", "S", "M", "L", "XL", "XXL"],
   };
@@ -196,6 +202,18 @@ const AddProducts = () => {
               required
               onChange={(e) => handlechange(e)}
             />
+          </div>
+          <div className={style.formrow}>
+            <span>Genre:</span>
+            <Select
+              required
+              value={values.genre}
+              onChange={(e) => handlechange(e)}
+              name="genre"
+            >
+              <MenuItem value={"girls"}>Girls</MenuItem>
+              <MenuItem value={"boys"}>Boys</MenuItem>
+            </Select>
           </div>
           <div style={{ marginLeft: "17rem", marginBottom: "1rem" }}>
             {values.images && (

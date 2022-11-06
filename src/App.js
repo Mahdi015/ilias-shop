@@ -107,6 +107,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/shopcollection" element={<ShopCollection />} />
+            <Route path="/shopcollection/:slug" element={<ShopCollection />} />
             <Route
               path="/orderconfirmation/:slug"
               element={<OrderConfirmation />}
